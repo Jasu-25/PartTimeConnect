@@ -1,0 +1,848 @@
+:root {
+    --blue: #0384fc;
+    --white: white;
+    --black: #000;
+    --gray: #797272;
+    --light-gray: #f8f9fa;
+    --border-gray: #e9ecef;
+    --success-green: #28a745;
+    --danger-red: #dc3545;
+    --warning-orange: #fd7e14;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    --star-color: #ffc107;
+}
+
+.providerprofile * {
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+
+.providerprofile h1,
+.providerprofile h2,
+.providerprofile h3,
+.providerprofile .company-name,
+.providerprofile .section-title {
+    font-family: 'Outfit', sans-serif;
+}
+
+.providerprofile {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--light-gray);
+}
+
+.providerprofile .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.providerprofile .company-header {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.providerprofile .company-header:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.providerprofile .company-info-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.providerprofile .company-logo-container {
+    flex-shrink: 0;
+}
+
+.providerprofile .company-logo-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 4px solid var(--white);
+    transition: var(--transition);
+    background-color: var(--lblue);
+    color: var(--blue);
+    font-size: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.providerprofile .company-logo-circle:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.providerprofile .company-logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.providerprofile .company-details {
+    flex: 1;
+}
+
+.providerprofile .company-name {
+    font-size: 2.5rem;
+    color: var(--blue);
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.providerprofile .company-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.providerprofile .rating,
+.providerprofile .employees,
+.providerprofile .location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.providerprofile .rating i {
+    color: var(--star-color);
+    font-size: 1rem;
+}
+
+.providerprofile .rating-text {
+    margin-left: 0.25rem;
+    font-weight: 500;
+}
+
+.providerprofile .employees i,
+.providerprofile .location i {
+    color: var(--blue);
+    font-size: 1rem;
+}
+
+:root {
+    --border-strong: rgba(0, 0, 0, 0.08);
+}
+
+.providerprofile .profile-section {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2.5rem;
+    transition: var(--transition);
+    margin-bottom: 2rem;
+}
+
+.providerprofile .profile-section:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.providerprofile .profile-section .seeker-profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-gray);
+}
+
+
+.providerprofile .section-title {
+    font-size: 2rem;
+    color: var(--blue);
+    font-weight: 600;
+    margin: 0;
+}
+
+.providerprofile .edit-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.providerprofile .edit-button:hover {
+    background-color: #0266cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.providerprofile .edit-button i {
+    font-size: 0.9rem;
+}
+
+.providerprofile .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.providerprofile .info-card {
+    background: var(--light-gray);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.providerprofile .info-card:hover {
+    background-color: #f1f3f4;
+    border-color: var(--blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.providerprofile .info-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.providerprofile .info-label {
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.providerprofile .info-value {
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.providerprofile .info-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.providerprofile .info-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.info-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.info-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.info-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.info-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.info-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.providerprofile .visit-button.loading,
+.providerprofile .social-button.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.providerprofile .visit-button.loading::after,
+.providerprofile .social-button.loading::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--white);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 0.5rem;
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.providerprofile .success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--success-green);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-hover);
+    z-index: 10000;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: var(--transition);
+}
+
+.providerprofile .success-message.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.success-message i {
+    margin-right: 0.5rem;
+}
+
+.providerprofile .posted-jobs-section {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2.5rem;
+    transition: var(--transition);
+    margin-bottom: 2rem;
+}
+
+.providerprofile .posted-jobs-section:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.providerprofile .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    position: relative;
+    /* for pseudo-element */
+}
+
+.providerprofile .section-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--border-gray);
+    pointer-events: none;
+}
+
+.providerprofile .jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.providerprofile .job-card {
+    background: var(--light-gray);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.providerprofile .job-card:hover {
+    background-color: #f1f3f4;
+    border-color: var(--blue);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+
+.providerprofile .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.providerprofile .job-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--black);
+    margin: 0;
+    flex: 1;
+    line-height: 1.3;
+}
+
+.providerprofile .job-type {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.job-type.full-time {
+    background-color: #e8f5e8;
+    color: #2d5a2d;
+}
+
+.job-type.part-time {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.job-type.contract {
+    background-color: #e2e3ff;
+    color: #3d348b;
+}
+
+.job-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.job-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.job-info i {
+    color: var(--blue);
+    width: 16px;
+    text-align: center;
+}
+
+.job-salary {
+    font-weight: 600;
+    color: var(--black);
+}
+
+.job-location {
+    font-weight: 500;
+}
+
+.job-date {
+    font-style: italic;
+}
+
+.view-applicants-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.view-applicants-btn:hover {
+    background-color: #0266cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.view-applicants-btn:active {
+    transform: translateY(0);
+}
+
+.view-applicants-btn i {
+    font-size: 0.9rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: blur(4px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-hover);
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow: hidden;
+    animation: slideIn 0.3s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid var(--border-gray);
+    background: var(--light-gray);
+}
+
+.modal-header h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    color: var(--blue);
+    margin: 0;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--gray);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.close-modal:hover {
+    background-color: var(--border-gray);
+    color: var(--black);
+}
+
+.modal-body {
+    padding: 2rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.applicants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.applicant-card {
+    background: var(--light-gray);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.applicant-card:hover {
+    border-color: var(--blue);
+    background-color: #f1f3f4;
+}
+
+.applicant-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--blue);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.applicant-info {
+    flex: 1;
+}
+
+.applicant-name {
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.25rem;
+}
+
+.applicant-email {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.applicant-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.skill-tag {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.applicant-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-btn.view {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.action-btn.view:hover {
+    background-color: #0266cc;
+}
+
+.action-btn.contact {
+    background-color: var(--success-green);
+    color: var(--white);
+}
+
+.action-btn.contact:hover {
+    background-color: #218838;
+}
+
+.view-applicants-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.view-applicants-btn.loading::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--white);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 0.5rem;
+    display: inline-block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.job-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.job-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.job-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.job-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.job-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.job-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.job-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.main-container {
+    min-height: 70vh;
+}
+
+.job-card:hover .job-title {
+    color: var(--blue);
+}
+
+.job-card:hover .view-applicants-btn {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.view-applicants-btn:focus,
+.close-modal:focus,
+.action-btn:focus {
+    outline: 3px solid rgba(3, 132, 252, 0.5);
+    outline-offset: 2px;
+}
+
+@media print {
+    .modal {
+        display: none !important;
+    }
+
+    .view-applicants-btn {
+        display: none;
+    }
+
+    .job-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--border-gray);
+    }
+}
+
+
+
+
+@media (max-width: 426px) {
+    .providerprofile .company-name {
+        font-size: 1.75rem;
+    }
+
+    .providerprofile .company-logo-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .providerprofile .company-meta {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .providerprofile .profile-section {
+        padding: 1rem;
+        min-height: 50vh;
+    }
+
+    .providerprofile .section-title {
+        font-size: 1.25rem;
+    }
+
+    .providerprofile .info-card {
+        padding: 0.75rem;
+    }
+
+    .providerprofile .edit-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .providerprofile .posted-jobs-section {
+        padding: 1rem;
+    }
+
+    .providerprofile .job-card {
+        padding: 0.75rem;
+    }
+
+    .providerprofile .job-title {
+        font-size: 1rem;
+    }
+
+    .providerprofile .job-details {
+        gap: 0.5rem;
+    }
+
+    .providerprofile .view-applicants-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .providerprofile .modal-header h3 {
+        font-size: 1.25rem;
+    }
+
+    .providerprofile .applicant-card {
+        padding: 1rem;
+    }
+
+    .providerprofile .applicant-skills {
+        justify-content: center;
+    }
+}

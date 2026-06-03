@@ -1,0 +1,474 @@
+/* CSS Variables from header.css */
+:root {
+
+    --light-gray: #f9fafb;
+    --border-gray: #e5e7eb;
+    --success-green: #10b981;
+    --warning-yellow: #f59e0b;
+    --error-red: #ef4444;
+    
+    /* /* Additional variables for enhanced styling */
+    --border-radius: 12px;
+    --shadow:  0px 0px 20px rgba(186, 186, 186, 0.18);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease; 
+}
+
+/* Reset and Base Styles */
+/* Limit reset to box-sizing only to avoid overriding shared header padding */
+.seekerprofile * {
+    box-sizing: border-box;
+}
+
+/* Keep margin/padding defaults for global elements so shared header styles are not unintentionally overridden. */
+
+.seekerprofile {
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Main Container */
+.seekerprofile .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    margin-top: 10px; /* Account for fixed header */
+}
+
+/* User Header Section */
+.seekerprofile .user-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.seekerprofile .user-header:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.seekerprofile .user-avatar-container {
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    position: relative;
+}
+
+.seekerprofile .user-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}   
+
+.seekerprofile .user-avatar:hover {
+    transform: scale(1);
+}
+
+.seekerprofile .user-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Section */
+.seekerprofile .profile-section {
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    transition: var(--transition);
+    box-shadow:var(--shadow-hover);
+    background-color: var(--white);
+}
+
+.seekerprofile .profile-section:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.seekerprofile .seeker-profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--blue);
+}
+
+.seekerprofile .profile-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin: 0;
+    position: relative;
+}
+
+
+.seekerprofile .edit-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.seekerprofile .edit-button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+}
+
+.seekerprofile .edit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.seekerprofile .edit-button i {
+    font-size: 1rem;
+} 
+
+
+/* Profile Content Grid */
+.seekerprofile .profile-content {
+    margin-top: 16px; /* 2*8 */
+}
+
+.seekerprofile .profile-grid {
+    /* Flexible grid layout for responsiveness */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 24px; /* 3*8 */
+}
+
+/* Profile Field (Card element) */
+.seekerprofile .profile-field {
+    background: var(--light-gray);
+    border: 1px solid var(--border-gray);
+    border-radius: 10px;
+    padding: 24px; /* 3*8 */
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.05);
+    opacity: 0; /* For JS animation */
+}
+
+.seekerprofile .profile-field:hover {
+    background-color: var(--white);
+    border-color: var(--blue);
+    transform: translateY(-4px); /* Subtle lift on hover */
+    box-shadow: var(--shadow-hover);
+}
+
+.seekerprofile .profile-field.full-width {
+    grid-column: 1 / -1;
+}
+
+.seekerprofile .profile-field > * {
+    position: relative;
+    z-index: 2;
+} 
+
+/* Field Labels (Typography Hierarchy) */
+.seekerprofile .field-label {
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 8px; /* 1*8 */
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 1*8 */
+}
+
+.seekerprofile .field-label::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: var(--blue);
+    border-radius: 2px;
+}
+
+/* Field Values */
+.seekerprofile .field-value {
+    color: var(--black);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 500;
+    padding-left: 12px; /* Alignment with label */
+}
+
+.seekerprofile .field-value p {
+    margin-bottom: 0; /* Remove default margin for paragraphs in this context */
+}
+
+/* Education Items */
+.seekerprofile .education-item {
+    margin-bottom: 16px; /* 2*8 */
+    padding: 16px; /* 2*8 */
+    background: var(--white);
+    border-radius: 8px;
+    border-left: 5px solid var(--blue); /* Strong visual cue */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.seekerprofile .education-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow);
+    border-left-color: #2563eb; /* Darker blue on hover */
+}
+
+.seekerprofile .education-item:last-child {
+    margin-bottom: 0;
+}
+
+.seekerprofile .education-year {
+    color: var(--gray);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 4px;
+    display: inline-block;
+}
+
+/* Skills Container */
+.seekerprofile .seeker-skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* 8-point system: 12px (1.5*8) */
+    margin-top: 8px;
+    padding-left: 12px;
+} 
+
+.seekerprofile .skill-tag {
+    background: linear-gradient(135deg, var(--blue), #2563eb);
+    color: var(--white);
+    padding: 8px 16px; /* 8-point system */
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+    transition: var(--transition);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+.seekerprofile .skill-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.seekerprofile .skill-tag:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+}
+
+.seekerprofile .skill-tag:hover::before {
+    left: 100%;
+}
+
+/* Availability Status (Trust Trigger) */
+.seekerprofile .availability-status {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* 8-point system: 12px */
+    padding: 16px; /* 2*8 */
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5); /* Light green gradient */
+    border: 2px solid var(--success-green);
+    border-radius: 10px;
+    transition: var(--transition);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.2);
+    margin-left: 12px;
+}
+
+
+.seekerprofile .availability-icon {
+    color: var(--success-green);
+    font-size: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+.seekerprofile .availability-text {
+    font-weight: 700;
+    color: var(--success-green);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+} 
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Page Load Animations - Staggered Progressive Disclosure */
+.seekerprofile .user-header {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.seekerprofile .profile-section {
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+/* Staggered slide-in for fields - UPDATED DELAYS FOR NEW 8-FIELD LAYOUT */
+.seekerprofile .profile-field:nth-child(1) { animation: slideInLeft 0.6s ease forwards; animation-delay: 0.4s; }
+.seekerprofile .profile-field:nth-child(2) { animation: slideInLeft 0.6s ease forwards; animation-delay: 0.5s; }
+.seekerprofile .profile-field:nth-child(3) { animation: slideInLeft 0.6s ease forwards; animation-delay: 0.6s; } /* NEW AGE FIELD */
+.seekerprofile .profile-field:nth-child(4) { animation: slideInLeft 0.6s ease forwards; animation-delay: 0.7s; }
+.seekerprofile .profile-field:nth-child(5) { animation: slideInLeft 0.6s ease forwards; animation-delay: 0.8s; }
+.seekerprofile .profile-field:nth-child(6) { animation: slideInLeft 0.7s ease forwards; animation-delay: 0.9s; } /* Full-width About Section */
+.seekerprofile .profile-field:nth-child(7) { animation: slideInLeft 0.7s ease forwards; animation-delay: 1.0s; } /* Full-width Education */
+.seekerprofile .profile-field:nth-child(8) { animation: slideInLeft 0.7s ease forwards; animation-delay: 1.1s; } /* Full-width Skills */
+.seekerprofile .profile-field:nth-child(9) { animation: slideInLeft 0.7s ease forwards; animation-delay: 1.2s; } /* Full-width Availability */
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .seekerprofile .profile-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .seekerprofile .main-container {
+        padding: 16px 8px; /* 8-point system */
+        margin-top: 64px;
+    }
+    
+    .seekerprofile .user-header {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .seekerprofile .user-avatar {
+        width: 100px;
+        height: 100px;
+        border-width: 3px;
+    }
+    
+    .seekerprofile .user-name {
+        font-size: 2rem;
+    }
+    
+    .seekerprofile .profile-section {
+        padding: 16px;
+    }
+    
+    .seekerprofile .profile-heading {
+        font-size: 1.5rem;
+    }
+    
+    .seekerprofile .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .seekerprofile .profile-field {
+        padding: 16px;
+    }
+    
+    .seekerprofile .field-label {
+        font-size: 0.9rem;
+    }
+    
+    .seekerprofile .field-value {
+        font-size: 1rem;
+    }
+
+    .seekerprofile .edit-button {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .seekerprofile .skills-container {
+        gap: 8px;
+    }
+    
+    .seekerprofile .skill-tag {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+}
+/* Print Styles for Professional Printing */
+@media print {
+    .seekerprofile .user-header,
+    .seekerprofile .profile-section {
+        box-shadow: none;
+        border: 1px solid var(--border-gray);
+    }
+    .seekerprofile .edit-button, .seekerprofile .availability-status {
+        display: none;
+    }
+    .seekerprofile .profile-field {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--border-gray);
+        background: var(--white);
+    }
+    .seekerprofile .skill-tag {
+        box-shadow: none;
+        border: 1px solid var(--gray);
+        background: none;
+        color: var(--black);
+    }
+}

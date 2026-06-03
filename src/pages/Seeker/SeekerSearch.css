@@ -1,0 +1,417 @@
+/* SEEKER SEARCH FULL STYLES
+   Prefix: seekersearch-
+   System: 8-point spacing, 60-30-10 Color Rule
+*/
+
+:root {
+    --seekersearch-primary: #007bff;
+    --seekersearch-primary-hover: #0056b3;
+    --seekersearch-bg: #f8fbff;
+    --seekersearch-white: #ffffff;
+    --seekersearch-text-main: #1e293b;
+    --seekersearch-text-muted: #64748b;
+    --seekersearch-success: #22c55e;
+    --seekersearch-border: #e2e8f0;
+    --seekersearch-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+
+    /* Spacing */
+    --sp-8: 8px;
+    --sp-12: 12px;
+    --sp-16: 16px;
+    --sp-24: 24px;
+    --sp-32: 32px;
+}
+
+/* --- Reset & Base --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.seekersearch-body {
+    color: var(--seekersearch-text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* --- Header & Location Search --- */
+.seekersearch-header {
+    background: var(--seekersearch-white);
+    padding: var(--sp-16) 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--seekersearch-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.seekersearch-logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--seekersearch-primary);
+}
+
+.seekersearch-logo span {
+    color: var(--seekersearch-text-main);
+}
+
+.seekersearch-location-bar {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    max-width: 500px;
+    gap: var(--sp-8);
+    /* Gap between input and button */
+}
+
+.seekersearch-loc-input {
+    flex: 1;
+    padding: var(--sp-12) var(--sp-16);
+    /* Increased height */
+    border: 1px solid var(--seekersearch-border);
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+.seekersearch-loc-btn {
+    background: var(--seekersearch-primary);
+    color: white;
+    border: none;
+    padding: var(--sp-12) var(--sp-16);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* --- User Nav & Dropdown --- */
+.seekersearch-user-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-8);
+    cursor: pointer;
+    position: relative;
+    padding: 6px 12px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.seekersearch-user-nav:hover {
+    background-color: #f1f5f9;
+}
+
+.seekersearch-avatar {
+    width: 32px;
+    height: 32px;
+    background: #dbeafe;
+    color: var(--seekersearch-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.seekersearch-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 220px;
+    background: var(--seekersearch-white);
+    border: 1px solid var(--seekersearch-border);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 8px 0;
+}
+
+.seekersearch-dropdown.seekersearch-active {
+    display: block;
+    animation: seekersearch-slideIn 0.2s ease-out;
+}
+
+.seekersearch-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--seekersearch-text-main);
+    font-size: 14px;
+}
+
+.seekersearch-dropdown-item:hover {
+    background-color: #f1f5f9;
+    color: var(--seekersearch-primary);
+}
+
+/* --- Content Search (Sub-Search) --- */
+.seekersearch-container {
+    padding: var(--sp-32) 5%;
+    width: 100%;
+    max-width: 2000px;
+    margin: 0;
+}
+
+.seekersearch-sub-search-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto var(--sp-32);
+}
+
+.seekersearch-sub-search-box {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    gap: var(--sp-12);
+    /* Gap between input and button */
+    padding: var(--sp-8);
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--seekersearch-border);
+    box-shadow: var(--seekersearch-shadow);
+}
+
+.seekersearch-sub-input {
+    flex: 1;
+    border: 1px solid var(--seekersearch-border);
+    outline: none;
+    padding: var(--sp-12) var(--sp-16);
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.seekersearch-sub-btn {
+    background: var(--seekersearch-primary);
+    color: white;
+    border: none;
+    padding: var(--sp-12) var(--sp-24);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- Job Grid & Cards --- */
+.seekersearch-hero-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1e3a8a;
+    text-transform: uppercase;
+}
+
+.seekersearch-hero-subtitle {
+    color: var(--seekersearch-primary);
+    font-weight: 500;
+    margin-bottom: var(--sp-24);
+}
+
+.seekersearch-job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--sp-24);
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+.seekersearch-card {
+    background: var(--seekersearch-white);
+    border: 1px solid var(--seekersearch-border);
+    border-radius: 16px;
+    padding: var(--sp-24);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--seekersearch-shadow);
+}
+
+.seekersearch-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Alignment Row 1: Logo and Heart */
+.seekersearch-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seekersearch-comp-logo {
+    width: 44px;
+    height: 44px;
+    background: #eff6ff;
+    color: var(--seekersearch-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.seekersearch-fav-btn {
+    background: none;
+    border: none;
+    color: var(--seekersearch-primary);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.seekersearch-job-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--seekersearch-primary);
+}
+
+.seekersearch-comp-name {
+    color: var(--seekersearch-text-muted);
+    font-size: 14px;
+    margin-top: -8px;
+}
+
+/* Alignment Row 2: Location and Badge */
+.seekersearch-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.seekersearch-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--seekersearch-primary);
+}
+
+.seekersearch-badge {
+    border: 1px dashed var(--seekersearch-primary);
+    color: var(--seekersearch-primary);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Row 3: Finance Details */
+.seekersearch-finance-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.seekersearch-finance-item {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.seekersearch-finance-item i {
+    color: var(--seekersearch-primary);
+}
+
+.seekersearch-job-desc {
+    font-size: 13px;
+    color: var(--seekersearch-text-muted);
+    line-height: 1.6;
+    min-height: 40px;
+}
+
+/* Footer: Date and Action */
+.seekersearch-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.seekersearch-post-date {
+    font-size: 12px;
+    color: var(--seekersearch-success);
+    font-weight: 700;
+}
+
+.seekersearch-apply-btn {
+    background: var(--seekersearch-primary);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* --- Responsiveness (Down to 320px) --- */
+@media (max-width: 768px) {
+    .seekersearch-location-bar {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .seekersearch-sub-search-box {
+        flex-direction: column;
+        gap: var(--sp-8);
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .seekersearch-sub-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .seekersearch-username {
+        display: none;
+    }
+
+    .seekersearch-container {
+        padding: 16px;
+    }
+
+    .seekersearch-job-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .seekersearch-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .seekersearch-card-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .seekersearch-apply-btn {
+        width: 100%;
+    }
+}
+
+@keyframes seekersearch-slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

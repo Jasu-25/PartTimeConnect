@@ -1,0 +1,465 @@
+:root {
+    --blue: #0384fc;
+    --white: white;
+    --black: #000;
+    --gray: #797272;
+    --light-gray: #f8f9fa;
+    --border-gray: #e9ecef;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    --light-blue: rgba(3, 132, 252, 0.1);
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+}
+
+.providerprofileupdate * {
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+    box-sizing: border-box;
+} 
+
+.providerprofileupdate h1,
+.providerprofileupdate h2,
+.providerprofileupdate h3,
+.providerprofileupdate .company-name-display,
+.providerprofileupdate .settings-title {
+    font-family: 'Outfit', sans-serif;
+} 
+
+.providerprofileupdate {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--light-gray);
+} 
+
+.providerprofileupdate .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+} 
+
+.providerprofileupdate .company-header {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.356);
+    height: 25vh;
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    transition: var(--transition);
+} 
+
+
+
+.providerprofileupdate .company-logo-container {
+    flex-shrink: 0;
+}
+
+.providerprofileupdate .company-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.6rem;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.providerprofileupdate .company-logo:hover {
+    transform: scale(1.05);
+    box-shadow: var(--hover-shadow);
+    border: 0px solid transparent;
+} 
+
+.providerprofileupdate .company-info {
+    flex: 1;
+}
+
+.providerprofileupdate .company-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.providerprofileupdate .company-details {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+} 
+
+.providerprofileupdate .company-rating,
+.providerprofileupdate .company-size,
+.providerprofileupdate .company-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.providerprofileupdate .company-rating {
+    color: var(--warning-color);
+}
+
+.providerprofileupdate .rating-text {
+    color: var(--gray);
+    margin-left: 5px;
+} 
+
+.providerprofileupdate .settings-container {
+    display: flex;
+    justify-content: center;
+}
+
+.providerprofileupdate .settings-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 800px;
+    transition: var(--transition);
+} 
+
+.settings-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.providerprofileupdate .settings-title {
+    font-size: 2rem;
+    color: var(--blue);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.providerprofileupdate .settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+} 
+
+.providerprofileupdate .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.providerprofileupdate .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.providerprofileupdate .form-label {
+    font-weight: 600;
+    color: var(--black);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.providerprofileupdate .form-label i {
+    color: var(--blue);
+    width: 16px;
+}
+
+.providerprofileupdate .form-input,
+.providerprofileupdate .form-textarea {
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--border-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: var(--white);
+} 
+
+.providerprofileupdate .form-input:focus,
+.providerprofileupdate .form-textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(3, 132, 252, 0.1);
+}
+
+.providerprofileupdate .form-textarea {
+    resize: vertical;
+    min-height: 100px;
+} 
+
+.providerprofileupdate .file-upload-container {
+    position: relative;
+}
+
+.providerprofileupdate .file-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.providerprofileupdate .file-upload-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px dashed var(--border-gray);
+    border-radius: 8px;
+    transition: var(--transition);
+    cursor: pointer;
+} 
+
+.file-upload-display:hover {
+    border-color: var(--blue);
+    background-color: rgba(3, 132, 252, 0.05);
+}
+
+.providerprofileupdate .upload-preview {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.providerprofileupdate .upload-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.providerprofileupdate .upload-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.providerprofileupdate .upload-label {
+    font-weight: 600;
+    color: var(--black);
+}
+
+.providerprofileupdate .upload-hint {
+    font-size: 0.875rem;
+    color: var(--gray);
+} 
+
+.providerprofileupdate .social-media-section {
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-gray);
+}
+
+.providerprofileupdate .section-subtitle {
+    font-size: 1.25rem;
+    color: var(--blue);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.providerprofileupdate .form-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.providerprofileupdate .btn-save {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+} 
+
+.providerprofileupdate .btn-save:hover {
+    background-color: #0266cc;
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.providerprofileupdate .btn-save:active {
+    transform: translateY(0);
+} 
+
+.providerprofileupdate .form-group {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.providerprofileupdate .form-group:nth-child(1) {
+    animation-delay: 0.1s;
+} 
+
+.form-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.form-group:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.form-group:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.providerprofileupdate .btn-save.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.providerprofileupdate .btn-save.loading::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--white);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 2rem; /* added more space between text and spinner */
+} 
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.providerprofileupdate .success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #c3e6cb;
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.providerprofileupdate .success-message.show {
+    display: flex;
+    animation: slideDown 0.3s ease;
+} 
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.error{
+    color: var(--danger-color);
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .providerprofileupdate .main-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .providerprofileupdate .settings-card {
+        padding: 1.5rem;
+        margin: 0 0.5rem;
+    }
+
+    .providerprofileupdate .company-name-display {
+        font-size: 2rem;
+    }
+
+    .providerprofileupdate .company-logo-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .providerprofileupdate .settings-title {
+        font-size: 1.5rem;
+    }
+
+    .providerprofileupdate .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .providerprofileupdate .file-upload-display {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .providerprofileupdate .upload-preview {
+        width: 80px;
+        height: 80px;
+    }
+} 
+
+@media (max-width: 480px) {
+    .providerprofileupdate .company-name-display {
+        font-size: 1.75rem;
+    }
+
+    .providerprofileupdate .company-logo-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .providerprofileupdate .settings-card {
+        padding: 1rem;
+    }
+
+    .providerprofileupdate .btn-save {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+}

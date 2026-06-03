@@ -1,0 +1,999 @@
+/* Additional CSS Variables for Dashboard */
+:root {
+    --blue: #0384fc;
+    --white: #ffffff;
+    --black: #333333;
+    --gray: #666666;
+    --light-gray: #f4f4f4;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+.providerjobsoverview {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--black);
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* Container */
+.providerjobsoverview .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Main Content */
+.providerjobsoverview .main-content {
+    min-height: calc(100vh - 70px);
+    padding: 30px 0;
+}
+
+/* Breadcrumb Navigation */
+.providerjobsoverview .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.providerjobsoverview .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.providerjobsoverview .breadcrumb a:hover {
+    color: #006bb3;
+}
+
+.providerjobsoverview .breadcrumb a i {
+    margin-right: 5px;
+}
+
+.providerjobsoverview .breadcrumb-separator {
+    margin: 0 10px;
+    color: var(--gray);
+}
+
+.providerjobsoverview .breadcrumb-current {
+    color: var(--black);
+    font-weight: 500;
+}
+
+/* Company Header Section */
+.providerjobsoverview .company-header {
+    background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.providerjobsoverview .company-logo-container {
+    flex-shrink: 0;
+}
+
+.providerjobsoverview .company-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lblue);
+    color: var(--blue);
+    font-size: 2.5rem;
+}
+
+.providerjobsoverview .company-info {
+    flex: 1;
+}
+
+.providerjobsoverview .company-name {
+    font-size: 2.5rem;
+    color: var(--blue);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.providerjobsoverview .company-tagline {
+    font-size: 1.1rem;
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.providerjobsoverview .company-stats {
+    display: flex;
+    gap: 30px;
+}
+
+.providerjobsoverview .stat-item {
+    text-align: center;
+}
+
+.providerjobsoverview .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--blue);
+    font-family: 'Outfit', sans-serif;
+}
+
+.providerjobsoverview .stat-label {
+    font-size: 0.9rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Section Headers */
+.providerjobsoverview .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.providerjobsoverview .section-header h2 {
+    font-size: 1.8rem;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.providerjobsoverview .section-header h2 i {
+    margin-right: 10px;
+    color: var(--blue);
+}
+
+/* Buttons */
+.providerjobsoverview .btn-primary,
+.providerjobsoverview .btn-secondary,
+.providerjobsoverview .btn-success,
+.providerjobsoverview .btn-warning,
+.providerjobsoverview .btn-danger,
+.providerjobsoverview .btn-safe {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.providerjobsoverview .btn-primary {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.providerjobsoverview .btn-primary:hover {
+    background-color: #006bb3;
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.providerjobsoverview .btn-secondary {
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+.providerjobsoverview .btn-secondary:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.providerjobsoverview .btn-success {
+    background-color: var(--success-color);
+    color: var(--white);
+}
+
+.providerjobsoverview .btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.providerjobsoverview .btn-warning {
+    background-color: var(--warning-color);
+    color: var(--black);
+}
+
+.providerjobsoverview .btn-warning:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+}
+
+.providerjobsoverview .btn-danger {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+
+.providerjobsoverview .btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.providerjobsoverview .btn-safe {
+    background-color: var(--success-color);
+    color: var(--white);
+}
+
+/* Job Grid */
+.providerjobsoverview .job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.providerjobsoverview .job-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.providerjobsoverview .job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+    border-color: var(--blue);
+}
+
+.providerjobsoverview .job-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.providerjobsoverview .job-title {
+    font-size: 1.3rem;
+    color: var(--black);
+    margin: 0;
+    flex: 1;
+    margin-right: 15px;
+}
+
+.providerjobsoverview .job-type {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.providerjobsoverview .job-card-details {
+    margin-bottom: 20px;
+}
+
+.providerjobsoverview .job-card-details p {
+    margin: 8px 0;
+    color: var(--gray);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.providerjobsoverview .job-card-details i {
+    margin-right: 8px;
+    color: var(--blue);
+    width: 16px;
+}
+
+.providerjobsoverview .job-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.providerjobsoverview .applicants-count {
+    color: var(--blue);
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.providerjobsoverview .applicants-count i {
+    margin-right: 5px;
+}
+
+.providerjobsoverview .job-status {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.providerjobsoverview .job-status i {
+    margin-right: 5px;
+    font-size: 0.6rem;
+}
+
+.providerjobsoverview .job-status.active {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success-color);
+}
+
+.providerjobsoverview .job-status.inactive {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--danger-color);
+}
+
+
+
+
+/* Job Details Page Styles */
+.providerjobsoverview .job-details-section {
+    margin-bottom: 40px;
+}
+
+.providerjobsoverview .job-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.providerjobsoverview .job-details-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+.providerjobsoverview .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.providerjobsoverview .job-title-section {
+    flex: 1;
+}
+
+.providerjobsoverview .job-header .job-title {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+
+.providerjobsoverview .job-header .job-type {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 6px 15px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.providerjobsoverview .job-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.providerjobsoverview .job-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.providerjobsoverview .job-info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid var(--blue);
+}
+
+.providerjobsoverview .job-info-item i {
+    font-size: 1.2rem;
+    color: var(--blue);
+    width: 20px;
+    text-align: center;
+}
+
+.providerjobsoverview .info-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.providerjobsoverview .info-value {
+    display: block;
+    font-size: 1rem;
+    color: var(--black);
+    font-weight: 500;
+}
+
+.providerjobsoverview .job-description,
+.providerjobsoverview .job-offers {
+    margin-bottom: 30px;
+}
+
+.providerjobsoverview .job-description h4,
+.providerjobsoverview .job-offers h4 {
+    font-size: 1.3rem;
+    color: var(--black);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.providerjobsoverview .job-description h4 i,
+.providerjobsoverview .job-offers h4 i {
+    margin-right: 10px;
+    color: var(--blue);
+}
+
+.providerjobsoverview .description-content,
+.providerjobsoverview .offers-content {
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+.providerjobsoverview .description-content h5 {
+    color: var(--black);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.providerjobsoverview .description-content ul,
+.providerjobsoverview .offers-content ul {
+    padding-left: 20px;
+}
+
+.providerjobsoverview .description-content li,
+.providerjobsoverview .offers-content li {
+    margin-bottom: 8px;
+}
+
+/* Applicants Section */
+.providerjobsoverview .applicants-section {
+    margin-bottom: 40px;
+}
+
+.providerjobsoverview .applicants-filter {
+    display: flex;
+    align-items: center;
+}
+
+.providerjobsoverview .filter-select {
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: var(--white);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.providerjobsoverview .filter-select:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 2px rgba(3, 132, 252, 0.2);
+}
+
+.providerjobsoverview .applicants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.providerjobsoverview .jobapplicant-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.providerjobsoverview .jobapplicant-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+}
+
+.providerjobsoverview .applicant-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.providerjobsoverview .applicant-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    background-color: var(--lblue);
+    border: 3px solid var(--white);
+    color: var(--blue);
+}
+
+.providerjobsoverview .applicant-info {
+    flex: 1;
+}
+
+.providerjobsoverview .applicant-name {
+    font-size: 1.2rem;
+    color: var(--black);
+    margin: 0 0 5px 0;
+}
+
+.providerjobsoverview .applicant-title {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin: 0 0 10px 0;
+}
+
+.providerjobsoverview .applicant-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.providerjobsoverview .application-date {
+    font-size: 0.8rem;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+}
+
+.providerjobsoverview .application-date i {
+    margin-right: 5px;
+}
+
+.providerjobsoverview .applicant-status {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.providerjobsoverview .applicant-status i {
+    margin-right: 4px;
+    font-size: 0.5rem;
+}
+
+.providerjobsoverview .applicant-status.new {
+    background-color: rgba(23, 162, 184, 0.1);
+    color: var(--info-color);
+}
+
+.providerjobsoverview .applicant-status.reviewed {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: var(--warning-color);
+}
+
+.providerjobsoverview .applicant-status.shortlisted {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success-color);
+}
+
+.providerjobsoverview .applicant-bio {
+    margin-bottom: 15px;
+    color: var(--gray);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.providerjobsoverview .applicant-skills {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.providerjobsoverview .skill-tag {
+    background-color: rgba(3, 132, 252, 0.1);
+    color: var(--blue);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.providerjobsoverview .applicant-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.providerjobsoverview .applicant-actions button {
+    flex: 1;
+    min-width: 100px;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+}
+
+/* Load More Section */
+.providerjobsoverview .load-more-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.providerjobsoverview .load-more-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+}
+
+/* Footer */
+.providerjobsoverview .footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.providerjobsoverview .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.providerjobsoverview .footer-section h4 {
+    color: var(--white);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.providerjobsoverview .footer-section p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.providerjobsoverview .footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.providerjobsoverview .footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.providerjobsoverview .footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.providerjobsoverview .footer-section ul li a:hover {
+    color: var(--blue);
+}
+
+.providerjobsoverview .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .providerjobsoverview .container {
+        padding: 0 15px;
+    }
+
+    .providerjobsoverview .main-content {
+        padding: 20px 0;
+    }
+
+    .providerjobsoverview .company-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .providerjobsoverview .company-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .providerjobsoverview .company-name {
+        font-size: 2rem;
+    }
+
+    .providerjobsoverview .company-stats {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .providerjobsoverview .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .providerjobsoverview .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .providerjobsoverview .job-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .providerjobsoverview .job-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .providerjobsoverview .job-card {
+        padding: 20px;
+    }
+
+    .providerjobsoverview .job-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .providerjobsoverview .job-title {
+        font-size: 1.1rem;
+        margin-right: 0;
+    }
+
+    .providerjobsoverview .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .providerjobsoverview .job-header .job-title {
+        font-size: 1.5rem;
+    }
+
+    .providerjobsoverview .job-meta {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .providerjobsoverview .job-info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .providerjobsoverview .applicants-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .providerjobsoverview .jobapplicant-card {
+        padding: 20px;
+    }
+
+    .providerjobsoverview .applicant-actions {
+        flex-direction: column;
+    }
+
+    .providerjobsoverview .applicant-actions button {
+        width: 100%;
+    }
+
+    .providerjobsoverview .breadcrumb {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+
+    .providerjobsoverview .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .providerjobsoverview .company-header {
+        padding: 20px 15px;
+    }
+
+    .providerjobsoverview .company-name {
+        font-size: 1.8rem;
+    }
+
+    .providerjobsoverview .company-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .providerjobsoverview .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .providerjobsoverview .job-card {
+        padding: 15px;
+    }
+
+    .providerjobsoverview .job-details-card {
+        padding: 20px;
+    }
+
+    .providerjobsoverview .jobapplicant-card {
+        padding: 15px;
+    }
+
+    .providerjobsoverview .applicant-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .providerjobsoverview .applicant-meta {
+        align-items: center;
+    }
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    background: var(--white);
+    border-left: 4px solid var(--blue);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: var(--hover-shadow);
+    z-index: 1001;
+    transform: translateX(400px);
+    transition: var(--transition);
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.success {
+    border-left-color: var(--success-color);
+    border-bottom: 1px solid var(--success-color);
+    border-top: 1px solid var(--success-color);
+    border-right: 1px solid var(--success-color);
+}
+
+.notification.error {
+    border-left-color: var(--danger-color);
+    border-bottom: 1px solid var(--danger-color);
+    border-top: 1px solid var(--danger-color);
+    border-right: 1px solid var(--danger-color);
+}
+
+.notification.warning {
+    border-left-color: var(--warning-color);
+    border-bottom: 1px solid var(--warning-color);
+    border-top: 1px solid var(--warning-color);
+    border-right: 1px solid var(--warning-color);
+}
+
+/* Icon Colors for Notification Types */
+.notification.success i {
+    color: #28a745;
+    /* Green */
+}
+
+.notification.error i {
+    color: #dc3545;
+    /* Red */
+}
+
+.notification.warning i {
+    color: #ffc107;
+    /* Yellow */
+}
+
+.notification.info i {
+    color: #17a2b8;
+    /* Blue */
+}
+
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}

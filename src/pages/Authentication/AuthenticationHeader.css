@@ -1,0 +1,48 @@
+ .authentication-navbar {
+     position: fixed;
+     left: 0;
+     width: 100%;
+     background-color: var(--white);
+     color: var(--blue);
+     height: 5rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     top: 0;
+     z-index: 999;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     overflow-x: hidden;
+ }
+
+
+ .authentication-nav-logo  a{
+     font-size: 1.8rem;
+     font-weight: bold;
+     padding-left: 7%;
+     letter-spacing: 0px;
+     text-decoration: none;
+     color: var(--blue);
+ }
+
+ .authentication-nav-links {
+     list-style: none;
+     display: flex;
+     margin: 0;
+     padding: 0;
+     gap: 10px;
+ }
+
+ .authentication-nav-links li a{
+     padding: 8px 14px;
+     font-size: 16px;
+     color: var(--blue);
+     text-decoration: none;
+     font-weight: 500;
+     display: inline-block;
+     white-space: nowrap;
+ }
+
+
+ .authentication-nav-links li a:hover {
+     color: var(--gray);
+ }

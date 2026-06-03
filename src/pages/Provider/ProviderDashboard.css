@@ -1,0 +1,897 @@
+/* File: test.css 
+   Theme: PartTimeConnect Provider Dashboard
+   System: 8-Point Spacing & 60-30-10 Color Rule
+*/
+
+:root {
+    /* Colors */
+    --pd-primary: #007bff;
+    --pd-primary-hover: #0056b3;
+    --pd-bg: #f8fbff;
+    --pd-white: #ffffff;
+    --pd-text-main: #1e293b;
+    --pd-text-muted: #64748b;
+    --pd-border: #e2e8f0;
+    --pd-success: #22c55e;
+    --pd-danger: #ef4444;
+
+    /* 8-Point Spacing System */
+    --pd-space-8: 8px;
+    --pd-space-16: 16px;
+    --pd-space-24: 24px;
+    --pd-space-32: 32px;
+    --pd-space-64: 64px;
+
+    /* Decoration */
+    --pd-radius: 12px;
+    --pd-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+    --pd-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.providerdashboard-body {
+    margin: 0;
+    color: var(--pd-text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Header Layout: Center Aligned CTA --- */
+.providerdashboard-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* Center-balanced grid */
+    align-items: center;
+    padding: var(--pd-space-16) 5%;
+    background: var(--pd-white);
+    border-bottom: 1px solid var(--pd-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.providerdashboard-logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--pd-primary);
+    letter-spacing: -0.5px;
+    justify-self: start;
+    cursor: pointer;
+}
+
+.providerdashboard-logo-accent {
+    color: var(--pd-text-main);
+}
+
+.providerdashboard-nav-center {
+    display: flex;
+    justify-content: center;
+}
+
+.providerdashboard-nav-right {
+    display: flex;
+    justify-self: end;
+    align-items: center;
+}
+
+.providerdashboard-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--pd-transition);
+    border: 1px solid transparent;
+}
+
+.providerdashboard-user-profile:hover {
+    background: #f1f5f9;
+    border-color: var(--pd-border);
+}
+
+.providerdashboard-avatar {
+    width: 36px;
+    height: 36px;
+    background: var(--pd-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+.providerdashboard-username {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--pd-text-main);
+}
+
+.providerdashboard-icon-sm {
+    font-size: 12px;
+    color: var(--pd-text-muted);
+    transition: var(--pd-transition);
+}
+
+.providerdashboard-user-profile:hover .providerdashboard-icon-sm {
+    color: var(--pd-primary);
+    transform: translateY(2px);
+}
+
+
+/* --- Buttons & Links --- */
+
+/* Header Center Button */
+.providerdashboard-btn-nav-post {
+    background: var(--pd-primary);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--pd-transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.providerdashboard-btn-nav-post:hover {
+    background: var(--pd-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Inline Section Button (Post Job) */
+.providerdashboard-btn-post-inline {
+    background: #e0eeff;
+    color: var(--pd-primary);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--pd-transition);
+}
+
+.providerdashboard-btn-post-inline:hover {
+    background: var(--pd-primary);
+    color: white;
+}
+
+/* View All Applications Link */
+.providerdashboard-link-view {
+    color: var(--pd-primary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    padding: var(--pd-space-8) var(--pd-space-16);
+    border-radius: 6px;
+    transition: var(--pd-transition);
+}
+
+.providerdashboard-link-view:hover {
+    background: #eff6ff;
+    text-decoration: underline;
+}
+
+/* View Profile Button */
+.providerdashboard-btn-profile {
+    background: var(--pd-white);
+    color: var(--pd-primary);
+    border: 1.5px solid var(--pd-primary);
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--pd-transition);
+}
+
+.providerdashboard-btn-profile:hover {
+    background: var(--pd-primary);
+    color: white;
+}
+
+/* --- Layout Container: 90% Width --- */
+.providerdashboard-container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: var(--pd-space-32) 0;
+}
+
+/* --- Hero Section --- */
+.providerdashboard-hero {
+    margin-bottom: var(--pd-space-32);
+}
+
+.providerdashboard-welcome {
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 800;
+    color: var(--pd-primary);
+    margin-bottom: var(--pd-space-8);
+}
+
+.providerdashboard-lead {
+    color: var(--pd-text-muted);
+    font-size: 1.1rem;
+}
+
+/* --- Stats Grid --- */
+.providerdashboard-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--pd-space-24);
+    margin-bottom: var(--pd-space-64);
+}
+
+.providerdashboard-stat-card {
+    background: var(--pd-white);
+    padding: var(--pd-space-24);
+    border-radius: var(--pd-radius);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--pd-shadow);
+}
+
+.providerdashboard-stat-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.providerdashboard-bg-blue {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+.providerdashboard-bg-purple {
+    background: #f5f3ff;
+    color: #8b5cf6;
+}
+
+.providerdashboard-bg-green {
+    background: #f0fdf4;
+    color: #22c55e;
+}
+
+.providerdashboard-stat-info {
+    display: flex;
+    gap: var(--pd-space-8);
+}
+
+.providerdashboard-stat-count {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--pd-text-main);
+}
+
+.providerdashboard-stat-name {
+    font-size: 14px;
+    color: var(--pd-text-muted);
+    display: flex;
+    align-items: center;
+}
+
+/* --- Recent Applications Item --- */
+.providerdashboard-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--pd-space-24);
+}
+
+.providerdashboard-section-heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--pd-primary);
+}
+
+.providerdashboard-application-item {
+    background: var(--pd-white);
+    padding: var(--pd-space-24);
+    border-radius: var(--pd-radius);
+    border: 1px solid var(--pd-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--pd-space-64);
+}
+
+.providerdashboard-app-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.providerdashboard-badge-new {
+    background: #e0f2fe;
+    color: #0284c7;
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 16px;
+}
+
+.providerdashboard-app-user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.providerdashboard-app-date {
+    font-size: 13px;
+    color: var(--pd-text-muted);
+}
+
+.providerdashboard-app-avatar {
+    width: 48px;
+    height: 48px;
+    background: #dbeafe;
+    color: var(--pd-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* --- Job Grid Section --- */
+.providerdashboard-jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--pd-space-32);
+}
+
+.providerdashboard-job-card {
+    background: var(--pd-white);
+    padding: var(--pd-space-32);
+    border-radius: var(--pd-radius);
+    border: 1px solid var(--pd-border);
+    box-shadow: var(--pd-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.providerdashboard-job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--pd-space-16);
+}
+
+.providerdashboard-status-pill {
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.providerdashboard-status-active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.providerdashboard-status-closed {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.providerdashboard-tag-outline {
+    border: 1px dashed var(--pd-primary);
+    padding: 4px 12px;
+    border-radius: 4px;
+    color: var(--pd-primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Job tags container: spacing between tag and pay */
+.providerdashboard-job-tags {
+    display: flex;
+    align-items: center;
+    gap: var(--pd-space-16); /* space between tag-outline and job-pay */
+    margin-bottom: var(--pd-space-16);
+}
+
+/* Job pay styling */
+.providerdashboard-job-pay {
+    color: var(--pd-text-main);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* Responsive overrides for job tags */
+@media (max-width: 768px) {
+    .providerdashboard-job-tags {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .providerdashboard-job-pay {
+        margin-left: 0;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 375px) {
+    .providerdashboard-job-tags {
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .providerdashboard-tag-outline {
+        padding: 3px 8px;
+        font-size: 12px;
+    }
+    .providerdashboard-job-pay {
+        font-size: 12px;
+    }
+}
+
+.providerdashboard-job-stats {
+    display: flex;
+    gap: 24px;
+    margin: var(--pd-space-16) 0;
+    font-size: 14px;
+    color: var(--pd-text-muted);
+}
+
+.providerdashboard-job-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--pd-text-muted);
+    margin-bottom: var(--pd-space-24);
+}
+
+.providerdashboard-job-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.providerdashboard-btn-edit,
+.providerdashboard-btn-view {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    background: var(--pd-primary);
+    color: white;
+    transition: var(--pd-transition);
+}
+
+/* --- Dropdown Logic & Styling --- */
+.providerdashboard-user-container {
+    position: relative;
+    /* Anchor for dropdown */
+}
+
+.providerdashboard-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 220px;
+    background: var(--pd-white);
+    border-radius: var(--pd-radius);
+    border: 1px solid var(--pd-border);
+    box-shadow: var(--pd-shadow);
+    padding: var(--pd-space-8) 0;
+    display: none;
+    /* Controlled by JS or :hover */
+    z-index: 1100;
+    animation: slideDown 0.2s ease-out;
+}
+
+/* Toggle Class for JS */
+.providerdashboard-dropdown.active {
+    display: block;
+}
+
+.providerdashboard-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--pd-text-main);
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--pd-transition);
+}
+
+.providerdashboard-dropdown-item i {
+    width: 20px;
+    color: var(--pd-primary);
+    /* 10% Accent rule [cite: 10, 11] */
+}
+
+.providerdashboard-dropdown-item:hover {
+    background-color: #f1f5f9;
+    color: var(--pd-primary);
+}
+
+.providerdashboard-dropdown-divider {
+    border: 0;
+    border-top: 1px solid var(--pd-border);
+    margin: 8px 0;
+}
+
+.providerdashboard-dropdown-item.logout {
+    color: var(--pd-danger);
+}
+
+.providerdashboard-dropdown-item.logout i {
+    color: var(--pd-danger);
+}
+
+/* --- 480px & Mobile Dropdown Responsiveness --- */
+@media (max-width: 480px) {
+    .providerdashboard-dropdown {
+        width: 200px;
+        /* Slightly wider but constrained for touch */
+        right: 8px;
+        max-height: 60vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .providerdashboard-dropdown-item {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+/* --- Small Phone: 375px dropdown adjustments --- */
+@media (max-width: 375px) {
+    /* Keep dropdown attached to header but ensure it fits */
+    .providerdashboard-dropdown {
+        width: 200px;
+        right: 8px;
+        top: calc(100% + 6px);
+        position: absolute;
+        max-height: 55vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .providerdashboard-dropdown-item {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+/* --- Extra Small Phone: 320px dropdown adjustments --- */
+@media (max-width: 320px) {
+    .providerdashboard-header {
+        padding: var(--pd-space-8) 12px;
+    }
+
+    .providerdashboard-logo {
+        font-size: 16px;
+    }
+
+    /* Hide text to fit 320px width comfortably */
+    .providerdashboard-username {
+        display: none;
+    }
+
+    /* Make dropdown full-width inside viewport with safe padding */
+    .providerdashboard-dropdown {
+        width: calc(100% - 32px);
+        left: 16px;
+        right: 16px;
+        position: fixed;
+        /* place just below the sticky header */
+        top: 56px;
+        max-height: 60vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .providerdashboard-dropdown-item {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .providerdashboard-header {
+        grid-template-columns: 1fr auto;
+    }
+
+    .providerdashboard-nav-center {
+        display: none;
+        /* Hide centered header CTA on mobile */
+    }
+
+    .providerdashboard-username {
+        display: none;
+    }
+
+    .providerdashboard-container {
+        width: 95%;
+        /* More space on small screens */
+    }
+
+    .providerdashboard-jobs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .providerdashboard-application-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .providerdashboard-app-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+/* --- Small Phone: 375px --- */
+@media (max-width: 375px) {
+
+    /* Header: stacked but compact, username hidden to show only avatar */
+    .providerdashboard-header {
+        grid-template-columns: 1fr;
+        padding: var(--pd-space-8) 4%;
+        gap: 8px;
+    }
+
+    .providerdashboard-nav-center {
+        display: none;
+    }
+
+    .providerdashboard-nav-right {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Show only avatar letter (hide full username) */
+    .providerdashboard-username {
+        display: none;
+    }
+
+    .providerdashboard-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    /* Hero */
+    .providerdashboard-welcome {
+        font-size: 22px;
+    }
+
+    .providerdashboard-lead {
+        font-size: 14px;
+    }
+
+    /* Section headings and action link */
+    .providerdashboard-section-heading {
+        font-size: 18px;
+    }
+
+    .providerdashboard-link-view {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    /* Stats */
+    .providerdashboard-stats-grid {
+        gap: 16px;
+    }
+
+    .providerdashboard-stat-card {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .providerdashboard-stat-icon-box {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    /* Applications */
+    .providerdashboard-application-item {
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    .providerdashboard-badge-new {
+        padding: 8px 12px;
+    }
+
+    /* Buttons */
+    .providerdashboard-btn-profile,
+    .providerdashboard-btn-post-inline,
+    .providerdashboard-btn-nav-post {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    /* Jobs */
+    .providerdashboard-jobs-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .providerdashboard-job-card {
+        padding: 18px;
+    }
+
+    .providerdashboard-job-title {
+        font-size: 16px;
+    }
+
+    .providerdashboard-job-desc {
+        font-size: 13px;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+    }
+
+    .providerdashboard-job-footer {
+        grid-template-columns: 1fr;
+    }
+
+    .providerdashboard-btn-edit,
+    .providerdashboard-btn-view {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .providerdashboard-tag-outline {
+        padding: 3px 8px;
+        font-size: 12px;
+    }
+}
+
+/* --- Extra Small Phone: 320px --- */
+@media (max-width: 320px) {
+
+    /* Header: switch to flex so center + right sit on same row */
+    .providerdashboard-header {
+        display: flex;
+        align-items: center;
+        padding: var(--pd-space-8) 3%;
+        gap: 8px;
+    }
+
+    .providerdashboard-logo {
+        font-size: 16px;
+        /* let logo grow to push controls to the right */
+        flex: 1 1 auto;
+    }
+
+    .providerdashboard-nav-right {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Show only avatar letter (hide full username) */
+    .providerdashboard-username {
+        display: none;
+    }
+
+    .providerdashboard-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    /* Hero */
+    .providerdashboard-welcome {
+        font-size: 20px;
+    }
+
+    .providerdashboard-lead {
+        display: none;
+    }
+
+    /* Section headings and action link */
+    .providerdashboard-section-heading {
+        font-size: 16px;
+    }
+
+    .providerdashboard-link-view {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    /* Section buttons */
+    .providerdashboard-btn-post-inline {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+
+    .providerdashboard-btn-nav-post {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    /* Section headings & stats */
+    .providerdashboard-stat-card {
+        padding: 12px;
+    }
+
+    .providerdashboard-stat-icon-box {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    /* Applications */
+    .providerdashboard-application-item {
+        padding: 12px;
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .providerdashboard-badge-new {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    /* Jobs */
+    .providerdashboard-job-desc {
+        font-size: 12px;
+        line-height: 1.4;
+        -webkit-line-clamp: 2;
+    }
+
+    .providerdashboard-job-title {
+        font-size: 15px;
+    }
+
+    .providerdashboard-job-footer {
+        gap: 8px;
+    }
+
+    .providerdashboard-btn-edit,
+    .providerdashboard-btn-view {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .providerdashboard-tag-outline {
+        padding: 3px 6px;
+        font-size: 11px;
+    }
+
+    /* Compact spacing */
+    .providerdashboard-container {
+        padding: 20px 0;
+    }
+}

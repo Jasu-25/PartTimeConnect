@@ -1,0 +1,416 @@
+:root {
+    --seekersaved-primary: #007bff;
+    --seekersaved-bg: #f8fbff;
+    --seekersaved-white: #ffffff;
+    --seekersaved-text: #1e293b;
+    --seekersaved-muted: #64748b;
+    --seekersaved-border: #e2e8f0;
+    --seekersaved-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Base Styles */
+.seekersaved-body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--seekersaved-text);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header & Search */
+.seekersaved-header {
+    background: var(--seekersaved-white);
+    padding: 16px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--seekersaved-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.seekersaved-logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--seekersaved-primary);
+}
+
+.seekersaved-logo span {
+    color: var(--seekersaved-text);
+}
+
+.seekersaved-search-bar {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    max-width: 500px;
+    border: 1px solid var(--seekersaved-border);
+    border-radius: 8px;
+    padding-left: 12px;
+}
+
+.seekersaved-search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.seekersaved-search-btn {
+    background: var(--seekersaved-primary);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 0 7px 7px 0;
+    cursor: pointer;
+}
+
+/* User Nav & Hover */
+.seekersaved-user-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+    padding: 6px 12px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.seekersaved-user-nav:hover {
+    background: #f1f5f9;
+    transform: translateY(-1px);
+}
+
+.seekersaved-user-nav:hover .seekersaved-username {
+    color: var(--seekersaved-primary);
+}
+
+.seekersaved-avatar {
+    width: 32px;
+    height: 32px;
+    background: #dbeafe;
+    color: var(--seekersaved-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.seekersaved-dropdown {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: white;
+    width: 220px;
+    border: 1px solid var(--seekersaved-border);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 8px 0;
+}
+
+.seekersaved-dropdown.seekersaved-active {
+    display: block;
+}
+
+/* Main Content */
+.seekersaved-container {
+    padding: 32px 5%;
+    max-width: 1400px;
+    margin: 0;
+}
+
+.seekersaved-welcome-title {
+    font-size: 28px;
+    color: var(--seekersaved-primary);
+    margin-bottom: 8px;
+}
+
+.seekersaved-welcome-subtitle {
+    color: var(--seekersaved-primary);
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+
+/* Job Grid & Cards */
+.seekersaved-job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.seekersaved-card {
+    background: var(--seekersaved-white);
+    border: 1px solid var(--seekersaved-border);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: var(--seekersaved-shadow);
+    transition: transform 0.2s;
+}
+
+.seekersaved-card:hover {
+    transform: translateY(-4px);
+}
+
+.seekersaved-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seekersaved-comp-logo {
+    width: 44px;
+    height: 44px;
+    background: #eff6ff;
+    color: var(--seekersaved-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.seekersaved-fav-btn {
+    background: none;
+    border: none;
+    color: var(--seekersaved-primary);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.seekersaved-job-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--seekersaved-primary);
+    margin: 0;
+}
+
+.seekersaved-comp-name {
+    color: var(--seekersaved-muted);
+    margin-top: -12px;
+    font-size: 14px;
+}
+
+.seekersaved-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.seekersaved-badge {
+    border: 1px dashed var(--seekersaved-primary);
+    color: var(--seekersaved-primary);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.seekersaved-finance-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.seekersaved-finance-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.seekersaved-finance-item i {
+    color: var(--seekersaved-primary);
+}
+
+.seekersaved-job-desc {
+    font-size: 14px;
+    color: var(--seekersaved-muted);
+    line-height: 1.6;
+    min-height: 44px;
+}
+
+.seekersaved-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.seekersaved-post-date {
+    font-size: 12px;
+    color: #22c55e;
+    font-weight: 700;
+}
+
+.seekersaved-apply-btn {
+    background: var(--seekersaved-primary);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Responsiveness until 320px */
+@media (max-width: 768px) {
+    .seekersaved-search-bar {
+        display: none;
+    }
+
+    .seekersaved-welcome-title {
+        font-size: 24px;
+    }
+
+    .seekersaved-username {
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .seekersaved-header {
+        padding: 10px;
+    }
+
+    .seekersaved-username {
+        display: none;
+    }
+
+    .seekersaved-logo {
+        font-size: 18px;
+    }
+
+    .seekersaved-container {
+        padding: 16px;
+    }
+
+    .seekersaved-card {
+        padding: 16px;
+    }
+
+    .seekersaved-job-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .seekersaved-card-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .seekersaved-apply-btn {
+        width: 100%;
+    }
+}
+
+/* --- User Nav Container --- */
+.seekersaved-user-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* 8-point spacing */
+    cursor: pointer;
+    position: relative;
+    padding: 6px 12px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* --- Dropdown Box --- */
+.seekersaved-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    /* Spacing from header */
+    right: 0;
+    width: 220px;
+    background: var(--seekersaved-white);
+    border: 1px solid var(--seekersaved-border);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: none;
+    /* Controlled by JS toggle */
+    padding: 8px 0;
+    z-index: 1100;
+}
+
+/* --- Active State & Animation --- */
+.seekersaved-dropdown.seekersaved-active {
+    display: block;
+    animation: seekersaved-slideIn 0.2s ease-out;
+}
+
+/* --- Dropdown Items --- */
+.seekersaved-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--seekersaved-text);
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.seekersaved-dropdown-item i {
+    width: 18px;
+    color: var(--seekersaved-primary);
+    /* Brand blue accent */
+    font-size: 16px;
+}
+
+.seekersaved-dropdown-item:hover {
+    background-color: #f1f5f9;
+    color: var(--seekersaved-primary);
+}
+
+/* --- Divider & Logout --- */
+.seekersaved-divider {
+    border: 0;
+    border-top: 1px solid var(--seekersaved-border);
+    margin: 8px 0;
+}
+
+.seekersaved-logout {
+    color: #ef4444;
+    /* Alert red for logout */
+}
+
+.seekersaved-logout i {
+    color: #ef4444 !important;
+}
+
+/* --- Animation Keyframes --- */
+@keyframes seekersaved-slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Mobile Fix (320px) --- */
+@media (max-width: 320px) {
+    .seekersaved-dropdown {
+        width: 180px;
+        right: -10px;
+        /* Aligns better on tiny screens */
+    }
+}

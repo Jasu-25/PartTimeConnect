@@ -1,0 +1,423 @@
+:root {
+  --blue: #0384fc;
+  --white: #f5f6f7;
+  --black: #000;
+  --gray: #797272;
+  --error: #ef4444;
+  --success: #10b981;
+  --light-gray: #f8f9fa;
+  --border-gray: #e5e7eb;
+  --shadow: 0 4px 16px rgba(3, 132, 252, 0.1);
+  --shadow-hover: 0 8px 32px rgba(3, 132, 252, 0.15);
+}
+
+.seekersignup * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.seekersignup .navbar {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  color: var(--blue);
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+}
+
+.seekersignup .nav-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding-left: 7%;
+  letter-spacing: 0px;
+}
+
+
+.seekersignup a{
+  color: var(--blue);
+  text-decoration: none
+}
+
+
+.seekersignup .nav-links li a:hover {
+  color: var(--gray);
+}
+
+
+.seekersignup .nav-links {
+  list-style: none;
+  width: 13%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.seekersignup {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, var(--white) 0%, #e8f4fd 100%);
+  color: var(--black);
+  line-height: 1.6;
+  min-height: 100vh;
+  font-size: 16px;
+  overflow-x: hidden;
+  padding-top: 7rem;
+}
+.seekersignup .signup-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.seekersignup .signup-card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  transition: box-shadow 0.3s ease;
+  border: 1px solid rgba(3, 132, 252, 0.08);
+}
+
+.seekersignup .signup-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.seekersignup .signup-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.seekersignup .signup-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.seekersignup .signup-subtitle {
+  color: var(--gray);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.seekersignup .signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.seekersignup .form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.seekersignup .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.seekersignup .form-label {
+  font-weight: 500;
+  color: var(--black);
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.seekersignup .form-input,
+.seekersignup .form-select {
+  padding: 14px 16px;
+  border: 2px solid var(--border-gray);
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease;
+  background: var(--white);
+  color: var(--black);
+  width: 100%;
+}
+
+.seekersignup .form-input:focus,
+.seekersignup .form-select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(3, 132, 252, 0.1);
+  transform: translateY(-1px);
+}
+
+.seekersignup .form-input::placeholder {
+  color: var(--gray);
+  font-weight: 400;
+}
+
+.seekersignup .form-select {
+  cursor: pointer;
+}
+
+.seekersignup .form-select option {
+  padding: 8px;
+  background: var(--white);
+  color: var(--black);
+}
+
+.seekersignup .message-area {
+  min-height: 24px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.seekersignup .message {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.seekersignup .error{
+  color: var(--error);
+}
+
+/* Field-level error message */
+.seekersignup .error-message {
+  display: block;
+  color: var(--error);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.seekersignup .signup-button {
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+  text-transform: none;
+  letter-spacing: 0.2px;
+}
+
+.seekersignup .signup-button:hover {
+  background: #0366d6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(3, 132, 252, 0.3);
+}
+
+.seekersignup .signup-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(3, 132, 252, 0.2);
+}
+
+.seekersignup .signup-button:disabled {
+  background: var(--gray);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.seekersignup .login-link {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-gray);
+}
+
+.seekersignup .login-link p {
+  color: var(--gray);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.seekersignup .login-link a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.seekersignup .login-link a:hover {
+  color: #0366d6;
+  text-decoration: underline;
+}
+
+.seekersignup .back-home {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.seekersignup .back-home a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seekersignup .back-home a:hover {
+  color: var(--black);
+}
+
+.seekersignup .back-home a:before {
+  content: "←";
+  font-size: 16px;
+}
+
+/* Loading state */
+.seekersignup .signup-button.loading {
+  background: var(--gray);
+  cursor: not-allowed;
+  position: relative;
+}
+
+.seekersignup .signup-button.loading:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Input validation states */
+.seekersignup .form-input.invalid,
+.seekersignup .form-select.invalid {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.seekersignup .form-input.valid,
+.seekersignup .form-select.valid {
+  border-color: var(--success);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .seekersignup .signup-container {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+  
+  .seekersignup .signup-card {
+    padding: 32px 24px;
+    border-radius: 12px;
+    max-width: none;
+    margin: 0;
+  }
+  
+  .seekersignup .signup-title {
+    font-size: 28px;
+  }
+  
+  .seekersignup .signup-subtitle {
+    font-size: 14px;
+  }
+  
+  .seekersignup .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .seekersignup .form-input,
+  .seekersignup .form-select {
+    padding: 16px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .seekersignup .signup-button {
+    padding: 18px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seekersignup .signup-container {
+    padding: 12px;
+    padding-top: 32px;
+  }
+  
+  .seekersignup .signup-card {
+    padding: 24px 20px;
+    border-radius: 8px;
+  }
+  
+  .seekersignup .signup-title {
+    font-size: 24px;
+  }
+  
+  .seekersignup .form-input,
+  .seekersignup .form-select {
+    padding: 14px 12px;
+  }
+  
+  .seekersignup .signup-button {
+    padding: 16px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .seekersignup .signup-card {
+    border: 2px solid var(--black);
+  }
+  
+  .seekersignup .form-input,
+  .seekersignup .form-select {
+    border-color: var(--black);
+  }
+  
+  .seekersignup .form-input:focus,
+  .seekersignup .form-select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px var(--blue);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .seekersignup * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

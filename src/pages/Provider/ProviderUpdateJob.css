@@ -1,0 +1,791 @@
+:root {
+    --blue: #0384fc;
+    --white: #ffffff;
+    --black: #333333;
+    --gray: #666666;
+    --light-gray: #f4f4f4;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    --dark-blue: #006bb3;
+    --light-blue: rgba(3, 132, 252, 0.1);
+    --text-muted: #888888;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--black);
+    background-color: var(--light-gray);
+}
+
+.providerupdatejob-main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.providerupdatejob-container {
+    width: 100%;
+}
+
+.providerupdatejob-company-header {
+    background: linear-gradient(135deg, var(--white), var(--light-blue));
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    transition: var(--transition);
+}
+
+.providerupdatejob-company-header:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+.providerupdatejob-company-logo-container {
+    flex-shrink: 0;
+}
+
+.providerupdatejob-company-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    font-size: 2.5rem;
+    background-color: var(--lblue);
+    border: 3px solid var(--white);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.providerupdatejob-company-logo:hover {
+    transform: scale(1.05);
+    box-shadow: var(--hover-shadow);
+}
+
+.providerupdatejob-company-info {
+    flex: 1;
+}
+
+.providerupdatejob-company-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.providerupdatejob-company-details {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.providerupdatejob-company-rating,
+.providerupdatejob-company-size,
+.providerupdatejob-company-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.providerupdatejob-company-rating {
+    color: var(--warning-color);
+}
+
+.providerupdatejob-rating-text {
+    color: var(--gray);
+    margin-left: 5px;
+}
+
+.providerupdatejob-job-form-section {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.providerupdatejob-job-form-section:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+.providerupdatejob-form-header {
+    background: linear-gradient(135deg, var(--blue), var(--dark-blue));
+    color: var(--white);
+    padding: 30px;
+    text-align: center;
+}
+
+.providerupdatejob-form-header h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.providerupdatejob-form-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.providerupdatejob-job-form {
+    padding: 40px;
+}
+
+.providerupdatejob-form-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.providerupdatejob-form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.providerupdatejob-section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--blue);
+}
+
+.providerupdatejob-section-title i {
+    color: var(--blue);
+    font-size: 1.2rem;
+}
+
+.providerupdatejob-form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.providerupdatejob-form-row:last-child {
+    margin-bottom: 0;
+}
+
+.providerupdatejob-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.providerupdatejob-form-group.providerupdatejob-full-width {
+    grid-column: 1 / -1;
+}
+
+.providerupdatejob-form-label {
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.providerupdatejob-required {
+    color: var(--danger-color);
+    font-weight: 700;
+}
+
+.providerupdatejob-form-input,
+.providerupdatejob-form-select,
+.providerupdatejob-form-textarea {
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: var(--transition);
+    background-color: var(--white);
+}
+
+.providerupdatejob-form-input:focus,
+.providerupdatejob-form-select:focus,
+.providerupdatejob-form-textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px var(--light-blue);
+    transform: translateY(-1px);
+}
+
+.providerupdatejob-form-input:hover,
+.providerupdatejob-form-select:hover,
+.providerupdatejob-form-textarea:hover {
+    border-color: var(--blue);
+}
+
+.providerupdatejob-form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+.providerupdatejob-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.providerupdatejob-input-prefix {
+    position: absolute;
+    left: 16px;
+    color: var(--gray);
+    font-weight: 600;
+    z-index: 1;
+}
+
+.providerupdatejob-input-group .providerupdatejob-form-input {
+    padding-left: 35px;
+}
+
+.providerupdatejob-input-hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.providerupdatejob-character-count {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 5px;
+    text-align: right;
+}
+
+.providerupdatejob-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.providerupdatejob-benefit-tag {
+    background: var(--light-gray);
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+}
+
+.providerupdatejob-benefit-tag:hover {
+    background: var(--light-blue);
+    border-color: var(--blue);
+    color: var(--blue);
+    transform: translateY(-2px);
+}
+
+.providerupdatejob-benefit-tag.selected {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: var(--white);
+}
+
+.providerupdatejob-benefit-tag i {
+    font-size: 12px;
+}
+
+.providerupdatejob-form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 30px;
+}
+
+.providerupdatejob-btn-primary,
+.providerupdatejob-btn-secondary,
+.providerupdatejob-btn-preview {
+    padding: 14px 28px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.providerupdatejob-btn-primary {
+    background: var(--blue);
+    color: var(--white);
+    box-shadow: var(--card-shadow);
+}
+
+.providerupdatejob-btn-primary:hover {
+    background: var(--dark-blue);
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+}
+
+.providerupdatejob-btn-secondary {
+    background: var(--white);
+    color: var(--gray);
+    border: 2px solid var(--border-color);
+}
+
+.providerupdatejob-btn-secondary:hover {
+    background: var(--light-gray);
+    border-color: var(--blue);
+    color: var(--blue);
+    transform: translateY(-2px);
+}
+
+.providerupdatejob-btn-preview {
+    background: var(--info-color);
+    color: var(--white);
+}
+
+.providerupdatejob-btn-preview:hover {
+    background: #138496;
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
+}
+
+.providerupdatejob-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    filter: blur(10px);
+}
+
+.providerupdatejob-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.providerupdatejob-modal-content {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--hover-shadow);
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+}
+
+.providerupdatejob-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--light-gray);
+}
+
+.providerupdatejob-modal-header h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.providerupdatejob-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--gray);
+    padding: 5px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.providerupdatejob-modal-close:hover {
+    background: var(--border-color);
+    color: var(--black);
+}
+
+.providerupdatejob-modal-body {
+    padding: 30px;
+}
+
+.providerupdatejob-modal-footer {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    padding: 20px 30px;
+    border-top: 1px solid var(--border-color);
+    background: var(--light-gray);
+}
+
+.providerupdatejob-success-modal {
+    text-align: center;
+    padding: 40px 30px;
+}
+
+.providerupdatejob-success-icon {
+    font-size: 4rem;
+    color: var(--success-color);
+    margin-bottom: 20px;
+}
+
+.providerupdatejob-success-modal h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 15px;
+}
+
+.providerupdatejob-success-modal p {
+    color: var(--gray);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.providerupdatejob-success-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.providerupdatejob-stat-item {
+    text-align: center;
+}
+
+.providerupdatejob-stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 5px;
+}
+
+.providerupdatejob-stat-label {
+    font-size: 14px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.providerupdatejob-success-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.providerupdatejob-footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.providerupdatejob-footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.providerupdatejob-footer-section h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.providerupdatejob-footer-section p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.providerupdatejob-footer-section ul {
+    list-style: none;
+}
+
+.providerupdatejob-footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.providerupdatejob-footer-section ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.providerupdatejob-footer-section ul li a:hover {
+    color: var(--blue);
+}
+
+.providerupdatejob-footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray);
+    color: var(--text-muted);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.providerupdatejob-company-header,
+.providerupdatejob-job-form-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.providerupdatejob-job-form-section {
+    animation-delay: 0.2s;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+}
+
+@media print {
+
+    .providerupdatejob-navbar,
+    .providerupdatejob-form-actions,
+    .providerupdatejob-footer {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .providerupdatejob-company-header,
+    .providerupdatejob-job-form-section {
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+    }
+}
+
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .providerupdatejob-form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .providerupdatejob-company-header {
+        padding: 40px;
+    }
+
+    .providerupdatejob-job-form {
+        padding: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .providerupdatejob-nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .providerupdatejob-search-container {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .providerupdatejob-search-field input {
+        width: 150px;
+    }
+
+    .providerupdatejob-nav-right {
+        margin-top: 10px;
+    }
+
+    .providerupdatejob-main-content {
+        padding: 15px;
+    }
+
+    .providerupdatejob-company-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .providerupdatejob-company-name {
+        font-size: 2rem;
+    }
+
+    .providerupdatejob-company-details {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .providerupdatejob-job-form {
+        padding: 25px;
+    }
+
+    .providerupdatejob-form-actions {
+        flex-direction: column;
+    }
+
+    .providerupdatejob-btn-primary,
+    .providerupdatejob-btn-secondary,
+    .providerupdatejob-btn-preview {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .providerupdatejob-success-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .providerupdatejob-success-actions {
+        flex-direction: column;
+    }
+
+    .providerupdatejob-modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+
+    .providerupdatejob-modal-header,
+    .providerupdatejob-modal-body,
+    .providerupdatejob-modal-footer {
+        padding: 20px;
+    }
+
+    .providerupdatejob-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .providerupdatejob-company-name {
+        font-size: 1.8rem;
+    }
+
+    .providerupdatejob-company-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .providerupdatejob-form-header h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .providerupdatejob-section-title {
+        font-size: 1.2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .providerupdatejob-footer-content {
+        grid-template-columns: 2fr;
+        text-align: center;
+    }
+}

@@ -1,0 +1,327 @@
+/* Color Palette & Typography Setup */
+:root {
+    /* Brand Colors */
+    --blue: #0384fc;
+    /* Accent color: 10% rule, for CTAs and highlights */
+    --white: #f5f6f7;
+    /* Background/Neutral */
+    --black: #000;
+    --gray: #797272;
+    --red: #f44336;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    /* Complementary accent for 'Fire' button */
+
+    /* Spacing System: 8-point grid */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+    /* Between sections */
+
+    /* Typography */
+    --font-base: 16px;
+    /* Base font size */
+    --line-height-body: 1.5;
+    /* Body line height */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+}
+
+/* Global Reset and Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--black);
+    line-height: var(--line-height-body);
+    font-size: var(--font-base);
+}
+
+.providerhired-dashboard-container {
+    max-width: 90%;
+    /* Standard wide container */
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-sm);
+    /* Generous padding to let the design 'breathe' */
+}
+
+/* --- Header Section (H1 Hierarchy) --- */
+.providerhired-dashboard-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.providerhired-main-heading {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-xs);
+    color: var(--blue);
+}
+
+.providerhired-sub-heading {
+    font-size: 1.125rem;
+    color: var(--gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+/* --- Employee Grid Section (Layout & Structure) --- */
+.providerhired-employee-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+
+    /* UPDATED CHANGE: Restrict grid width to 90% and center it */
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* --- Employee Card Styling --- */
+.providerhired-employee-card {
+    background-color: #fff;
+    border-radius: var(--spacing-xs);
+    /* Reduced vertical padding for reduced height */
+    padding: var(--spacing-md);
+    box-shadow: 0 0px 12px rgba(128, 128, 128, 0.235);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.providerhired-employee-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.103);
+}
+
+/* Card Header (Avatar and Name/Role) */
+.providerhired-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.providerhired-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-medium);
+    color: #fff;
+    margin-bottom: var(--spacing-xs);
+    background-color: color-mix(in srgb, var(--blue) 80%, white);
+}
+
+.providerhired-name {
+    font-size: 1.4rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 4px;
+}
+
+.providerhired-role {
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+}
+
+.providerhired-blue-accent {
+    color: var(--blue);
+}
+
+.providerhired-name-role {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.providerhired-bg-blue-light {
+    background-color: rgba(3, 132, 252, 0.15);
+}
+
+.providerhired-bg-red {
+    background-color: var(--red);
+}
+
+/* Card Details */
+.providerhired-card-details {
+    padding-top: var(--spacing-xs);
+    border-top: 1px solid #eee;
+    margin-bottom: var(--spacing-md);
+}
+
+.providerhired-detail-item {
+    display: flex;
+    align-items: center;
+    color: var(--gray);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.providerhired-detail-item i {
+    margin-right: var(--spacing-xs);
+    font-size: 1.125rem;
+    color: var(--blue);
+}
+
+/* Card Actions (Buttons) */
+.providerhired-card-actions {
+    display: flex;
+    /* Added gap for space between buttons */
+    gap: var(--spacing-sm);
+    /* 16px space */
+    justify-content: space-between;
+}
+
+.providerhired-btn {
+    padding: 8px var(--spacing-sm);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+
+    /* These three properties ensure all buttons are equal width */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    text-align: center;
+}
+
+.providerhired-btn-contact {
+    background-color: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+}
+
+.providerhired-btn-contact:hover {
+    background-color: color-mix(in srgb, var(--blue) 90%, black);
+}
+
+.providerhired-btn-view-profile {
+    background-color: #fff;
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+.providerhired-btn-view-profile:hover {
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.providerhired-btn-fire {
+    background-color: var(--red);
+    color: #fff;
+}
+
+.providerhired-btn-fire:hover {
+    background-color: color-mix(in srgb, var(--red) 90%, black);
+}
+
+
+/* Notification Styles */
+.providerhired-notification {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    background: var(--white);
+    border-left: 4px solid var(--blue);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: var(--hover-shadow);
+    z-index: 1001;
+    transform: translateX(400px);
+    transition: var(--transition);
+}
+
+.providerhired-notification.show {
+    transform: translateX(0);
+}
+
+.providerhired-notification.success {
+    border-left-color: var(--success-color);
+    border-bottom: 1px solid var(--success-color);
+    border-top: 1px solid var(--success-color);
+    border-right: 1px solid var(--success-color);
+}
+
+.providerhired-notification.error {
+    border-left-color: var(--danger-color);
+    border-bottom: 1px solid var(--danger-color);
+    border-top: 1px solid var(--danger-color);
+    border-right: 1px solid var(--danger-color);
+}
+
+.providerhired-notification.warning {
+    border-left-color: var(--warning-color);
+    border-bottom: 1px solid var(--warning-color);
+    border-top: 1px solid var(--warning-color);
+    border-right: 1px solid var(--warning-color);
+}
+
+/* Icon Colors for Notification Types */
+.providerhired-notification.success i {
+    color: #28a745;
+    /* Green */
+}
+
+.providerhired-notification.error i {
+    color: #dc3545;
+    /* Red */
+}
+
+.providerhired-notification.warning i {
+    color: #ffc107;
+    /* Yellow */
+}
+
+.providerhired-notification.info i {
+    color: #17a2b8;
+    /* Blue */
+}
+
+/* --- Responsiveness (Mobile-First Approach) --- */
+
+/* Tablet Layout (2 cards per row) */
+@media (max-width: 1024px) {
+    .providerhired-employee-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Reset max-width to use available space on tablet/mobile */
+        max-width: 100%;
+    }
+}
+
+/* Mobile Layout (1 card per row) */
+@media (max-width: 600px) {
+    .providerhired-employee-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .providerhired-card-actions {
+        display: grid;
+        /* Three equal columns for mobile stacking */
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--spacing-xs);
+    }
+
+    .providerhired-btn {
+        padding: 10px 0;
+        /* Reset flex properties for mobile grid layout */
+        flex-basis: auto;
+    }
+
+    .providerhired-dashboard-container {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+}

@@ -1,0 +1,429 @@
+:root {
+    --blue: #0384fc;
+    --white: white;
+    --black: #000;
+    --gray: #797272;
+    --light-gray: #f4f4f4;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --light-blue: rgba(3, 132, 252, 0.1);
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--light-gray);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+
+
+.ps-settings-container {
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 90px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ps-company-header {
+    background: linear-gradient(135deg, var(--white), var(--light-blue));
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px var(--shadow-color);
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    transition: var(--transition);
+}
+
+.ps-company-header:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+.ps-company-logo-container {
+    flex-shrink: 0;
+}
+
+.ps-company-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lblue);
+    color: var(--blue);
+    font-size: 2.5rem;
+    border: 3px solid var(--white);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.ps-company-logo:hover {
+    transform: scale(1.05);
+    box-shadow: var(--hover-shadow);
+}
+
+.ps-company-info {
+    flex: 1;
+}
+
+.ps-company-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.ps-company-details {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ps-company-rating,
+.ps-company-size,
+.ps-company-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.ps-company-rating {
+    color: var(--warning-color);
+}
+
+.ps-rating-text {
+    color: var(--gray);
+    margin-left: 5px;
+}
+
+.ps-settings-card {
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.ps-settings-card h2 {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.ps-setting-section {
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.ps-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--white);
+    cursor: pointer;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ps-section-header h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.ps-dropdown-icon {
+    transition: transform 0.3s ease;
+}
+
+.ps-section-header.expanded .ps-dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.ps-dropdown-content {
+    display: none;
+    padding: 15px 20px;
+    background-color: var(--white);
+    border-top: 1px solid #e0e0e0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.ps-section-header.expanded+.ps-dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.ps-dropdown-item-setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.ps-dropdown-item-setting:last-child {
+    border-bottom: none;
+}
+
+.ps-dropdown-item-setting span {
+    font-size: 1rem;
+    color: var(--black);
+}
+
+.ps-manage-btn {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.ps-manage-btn:hover {
+    background-color: #006bb3;
+}
+
+.ps-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10002;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.ps-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ps-modal-content {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.ps-modal-overlay.show .ps-modal-content {
+    transform: translateY(0);
+}
+
+.ps-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray);
+}
+
+.ps-close-button:hover {
+    color: var(--black);
+}
+
+.ps-modal-content h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ps-modal-content p {
+    font-size: 1rem;
+    color: var(--gray);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ps-modal-content .ps-form-group {
+    margin-bottom: 15px;
+}
+
+.ps-modal-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--gray);
+}
+
+.ps-modal-content input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ps-modal-content input[type="password"]:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 2px rgba(3, 132, 252, 0.2);
+}
+
+.ps-modal-save-btn,
+.ps-modal-deactivate-btn,
+.ps-modal-delete-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.ps-modal-save-btn {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.ps-modal-save-btn:hover {
+    background-color: #006bb3;
+}
+
+.ps-modal-deactivate-btn {
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+.ps-modal-deactivate-btn:hover {
+    background-color: #555;
+}
+
+.ps-modal-delete-btn {
+    background-color: #dc3545;
+    color: var(--white);
+}
+
+.ps-modal-delete-btn:hover {
+    background-color: #c82333;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .ps-company-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .ps-company-name {
+        font-size: 2rem;
+    }
+
+    .ps-company-details {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .ps-settings-container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .profile-name-display {
+        font-size: 2rem;
+    }
+
+    .ps-settings-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .ps-section-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .ps-dropdown-item-setting span {
+        font-size: 0.9rem;
+    }
+
+    .ps-manage-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .ps-modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .ps-modal-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .ps-modal-content p {
+        font-size: 0.9rem;
+    }
+
+    .ps-modal-save-btn,
+    .ps-modal-deactivate-btn,
+    .ps-modal-delete-btn {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-avatar-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-name-display {
+        font-size: 1.8rem;
+    }
+
+    .ps-settings-container {
+        margin: 10px;
+        padding: 15px;
+    }
+}
