@@ -86,7 +86,7 @@ export function JobProvidersignup() {
 
         // If no errors, proceed with signup
         if (Object.keys(newErrors).length === 0) {
-            let result = await axios.post("/backend/register_provider.php", {
+            let result = await axios.post("/PartTimeConnect-Backend/register_provider.php", {
                 companyName: formData.companyName,
                 email: formData.email,
                 password: formData.password,

@@ -11,11 +11,11 @@ export function SeekerApplied() {
 
     async function FetchRequiredData() {
 
-        let saveddata = await axios.get('backend/getsaveddata.php', {
+        let saveddata = await axios.get('PartTimeConnect-Backend/getsaveddata.php', {
             withCredentials: true
         });
         setSavedJobs(saveddata.data);
-        let result = await axios.get('/backend/getappliedjob.php', {
+        let result = await axios.get('/PartTimeConnect-Backend/getappliedjob.php', {
             withCredentials: true
         });
         setAppliedJobs(result.data);

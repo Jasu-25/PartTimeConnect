@@ -88,7 +88,7 @@ export function SeekerSettings() {
 
         setIsPasswordLoading(true);
         try {
-            let result = await axios.post('/backend/change_pass_seeker.php', {
+            let result = await axios.post('/PartTimeConnect-Backend/change_pass_seeker.php', {
                 current: current,
                 newpassword: newPass
             });
@@ -126,7 +126,7 @@ export function SeekerSettings() {
         setValidationMessage('');
         setIsPasswordLoading(true);
         try {
-            let result = await axios.post('/backend/delete_account_seeker.php');
+            let result = await axios.post('/PartTimeConnect-Backend/delete_account_seeker.php');
             if (result.data.status === "error") {
                 setTimeout(() => {
                     setIsPasswordLoading(false)

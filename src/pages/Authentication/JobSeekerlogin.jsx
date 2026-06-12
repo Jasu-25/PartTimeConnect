@@ -38,7 +38,7 @@ export function JobSeekerlogin() {
         validation();
         console.log(password);
         if (Object.keys(newErrors).length === 0) {
-            let result = await axios.post("/backend/seeker_log.php", {
+            let result = await axios.post("/PartTimeConnect-Backend/seeker_log.php", {
                 email: email,
                 password:password
             });

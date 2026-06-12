@@ -19,7 +19,7 @@ export function SeekerAppliedJobDetails() {
     async function fetchJobDetails() {
         if (!JobId) return;
         try {
-            let result = await axios.post('/backend/getidjob.php', {
+            let result = await axios.post('/PartTimeConnect-Backend/getidjob.php', {
                 jobId: JobId
             },
                 {
@@ -36,7 +36,7 @@ export function SeekerAppliedJobDetails() {
     async function checkIfApplied() {
 
         try {
-            let appliedresult = await axios.get('/backend/getappliedjob.php', {
+            let appliedresult = await axios.get('/PartTimeConnect-Backend/getappliedjob.php', {
                 withCredentials: true
             });
             let seekerappliedjobs = appliedresult.data;
@@ -47,7 +47,7 @@ export function SeekerAppliedJobDetails() {
                 }
             });
 
-            let savedresult = await axios.get('/backend/getsaveddata.php', {
+            let savedresult = await axios.get('/PartTimeConnect-Backend/getsaveddata.php', {
                 withCredentials: true
             });
             setIsSaved(false);
@@ -65,7 +65,7 @@ export function SeekerAppliedJobDetails() {
     async function applyForJob() {
         setIsLoading(true);
         try {
-            let result = await axios.post('/backend/applyjob.php', {
+            let result = await axios.post('/PartTimeConnect-Backend/applyjob.php', {
                 jobid: JobId,
                 companyid: jobDetails[0].provider_name,
                 companyname: jobDetails[0].company_name
@@ -88,7 +88,7 @@ export function SeekerAppliedJobDetails() {
 
     async function handleSaveJob() {
 
-        let result = await axios.post('/backend/add_savedjob.php',
+        let result = await axios.post('/PartTimeConnect-Backend/add_savedjob.php',
             {
                 id: jobDetails[0].jobs_id,
                 title: jobDetails[0].job_title,

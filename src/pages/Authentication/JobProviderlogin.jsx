@@ -33,7 +33,7 @@ export function JobProviderlogin() {
         e.preventDefault();
         validation();
         if (Object.keys(newErrors).length === 0) {
-            let result = await axios.post('/backend/provider_log.php', {
+            let result = await axios.post('/PartTimeConnect-Backend/provider_log.php', {
                 email: email,
                 password: password
             });

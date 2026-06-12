@@ -88,7 +88,7 @@ export function ProviderProfileUpdate() {
     }
 
     async function GetProfileData() {
-        let respose = await axios.get('/backend/get_provider.php', {
+        let respose = await axios.get('/PartTimeConnect-Backend/get_provider.php', {
             withCredentials: true
         });
         console.log(respose.data);
@@ -115,7 +115,7 @@ export function ProviderProfileUpdate() {
         setLoading(true)
         let respose = null
         try {
-            respose = await axios.post('/backend/update-provider-profile.php', {
+            respose = await axios.post('/PartTimeConnect-Backend/update-provider-profile.php', {
                 withCredentials: true,
                 companyname: form.companyName,
                 email: form.contactEmail,

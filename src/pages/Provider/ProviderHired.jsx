@@ -93,12 +93,12 @@ export default function ProviderHired() {
                         </div>
                     </div>
 
-                    <div className="providerhired-employee-card" data-name="Rohan Das" data-role="Backend Engineer">
+                    <div className="providerhired-employee-card" data-name="Rohan Das" data-role="PartTimeConnect-Backend Engineer">
                         <div className="providerhired-card-header">
                             <div className="providerhired-avatar providerhired-bg-blue-light">RD</div>
                             <div className="providerhired-name-role">
                                 <h2 className="providerhired-name">Rohan Das</h2>
-                                <p className="providerhired-role providerhired-blue-accent">Backend Engineer</p>
+                                <p className="providerhired-role providerhired-blue-accent">PartTimeConnect-Backend Engineer</p>
                             </div>
                         </div>
                         <div className="providerhired-card-details">

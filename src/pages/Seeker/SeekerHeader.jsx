@@ -11,7 +11,7 @@ export function SeekerHeader() {
     let searchnavigate = useNavigate();
     const { seekerData: Seekerdata, refreshSeeker: setSeeker } = useContext(Requireddata);
     async function logoutseeker() {
-        await axios.get('backend/seeker_logout.php');
+        await axios.get('PartTimeConnect-Backend/seeker_logout.php');
         searchnavigate('/jobseekerlogin');
     }
     useEffect(() => {

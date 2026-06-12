@@ -409,6 +409,195 @@
     font-size: 13px;
 }
 
+.empty-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--pd-space-32) var(--pd-space-16);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Base Empty State Card Box */
+.empty-card-box {
+    background: var(--pd-white);
+    border: 1px solid var(--pd-border);
+    border-radius: var(--pd-radius);
+    padding: var(--pd-space-32) var(--pd-space-24);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--pd-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pd-space-16);
+}
+
+/* Icon Ring Container */
+.empty-card-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background-color: #eff6ff; /* Soft primary blue tint */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--pd-space-8);
+}
+
+.empty-card-icon {
+    font-size: 24px;
+    color: var(--pd-primary);
+}
+
+/* Title & Description */
+.empty-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pd-text-main);
+    margin: 0;
+}
+
+.empty-card-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--pd-text-muted);
+    margin: 0 0 var(--pd-space-8) 0;
+}
+
+/* Post Job Button Styling */
+.empty-card-action-btn {
+    background-color: var(--pd-primary);
+    color: var(--pd-white);
+    border: none;
+    padding: var(--pd-space-12) var(--pd-space-24);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0, 123, 255, 0.2);
+    transition: var(--pd-transition);
+}
+
+.empty-card-plus-sign {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* States & Micro-interactions */
+.empty-card-action-btn:hover {
+    background-color: var(--pd-primary-hover);
+    box-shadow: 0 6px 12px -2px rgba(0, 123, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.empty-card-action-btn:active {
+    transform: scale(0.98);
+}
+
+/* Mobile Breakpoint Optimization (down to 320px) */
+@media (max-width: 320px) {
+    .empty-card-box {
+        padding: var(--pd-space-24) var(--pd-space-16);
+    }
+    
+    .empty-card-title {
+        font-size: 18px;
+    }
+    
+    .empty-card-subtitle {
+        font-size: 13px;
+    }
+    
+    .empty-card-action-btn {
+        width: 100%;
+        padding: var(--pd-space-12) var(--pd-space-16);
+    }
+}
+
+.empty-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--pd-space-32) var(--pd-space-16);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Base Empty State Card Box */
+.empty-card-box {
+    background: var(--pd-white);
+    border: 1px solid var(--pd-border);
+    border-radius: var(--pd-radius);
+    padding: var(--pd-space-32) var(--pd-space-24);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--pd-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pd-space-16);
+}
+
+/* Icon Ring Container (Using soft theme background tint) */
+.empty-card-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background-color: #eff6ff; /* Soft primary blue tint */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--pd-space-8);
+}
+
+.empty-card-icon {
+    font-size: 24px;
+    color: var(--pd-primary);
+}
+
+/* Title & Description matching dashboard hierarchy */
+.empty-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pd-text-main);
+    margin: 0;
+}
+
+.empty-card-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--pd-text-muted);
+    margin: 0;
+}
+
+/* Mobile Breakpoint Optimization (down to 320px) */
+@media (max-width: 320px) {
+    .empty-card-box {
+        padding: var(--pd-space-24) var(--pd-space-16);
+    }
+    
+    .empty-card-title {
+        font-size: 18px;
+    }
+    
+    .empty-card-subtitle {
+        font-size: 13px;
+    }
+}
+
 /* Responsive overrides for job tags */
 @media (max-width: 768px) {
     .providerdashboard-job-tags {

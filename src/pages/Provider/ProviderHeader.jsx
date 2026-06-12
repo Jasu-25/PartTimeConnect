@@ -10,7 +10,7 @@ export function ProviderHeader() {
     const userNavRef = useRef(null);
     let searchnavigate = useNavigate();
     async function logoutprovider() {
-        await axios.get('backend/provider_logout.php');
+        await axios.get('PartTimeConnect-Backend/provider_logout.php');
         searchnavigate('/jobproviderlogin');
     }
     useEffect(() => {

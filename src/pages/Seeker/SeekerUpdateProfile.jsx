@@ -225,7 +225,7 @@ export function SeekerUpdateProfile() {
     setSubmitting(true);
     showNotification('Saving profile...', 'info');
     try {
-      const result = await axios.post('backend/update-seeker-profile.php', {
+      const result = await axios.post('PartTimeConnect-Backend/update-seeker-profile.php', {
         name: form.fullName,
         email: form.email,
         phone: form.mobile,

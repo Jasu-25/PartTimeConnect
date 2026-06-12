@@ -18,11 +18,11 @@ export function SeekerDashboard() {
         if (!Seekerdata) {
             setSeeker();
         }
-        let jobsdata = await axios.get('backend/get-jobs.php', {
+        let jobsdata = await axios.get('PartTimeConnect-Backend/get-jobs.php', {
             withCredentials: true
         });
         setJobs(jobsdata.data);
-        let saveddata = await axios.get('backend/getsaveddata.php', {
+        let saveddata = await axios.get('PartTimeConnect-Backend/getsaveddata.php', {
             withCredentials: true
         });
         setSavedJobs(saveddata.data);
@@ -30,7 +30,7 @@ export function SeekerDashboard() {
     }
 
     async function GetRequireddata() {
-        let result = await axios.get('backend/get-s-requireddata.php', {
+        let result = await axios.get('PartTimeConnect-Backend/get-s-requireddata.php', {
             withCredentials: true
         });
         setRequiredData({
@@ -85,6 +85,7 @@ export function SeekerDashboard() {
             return parts.includes(input);
         });
     }
+
 
     return (
         <>

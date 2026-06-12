@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server:{
     proxy:{
-      '/backend':{
+      '/PartTimeConnect-Backend':{
         target: 'http://localhost/',
       }
     }

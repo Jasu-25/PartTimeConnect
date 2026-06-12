@@ -14,7 +14,7 @@ function SeekerProvider({ children }) {
 
   const fetchSeeker = async () => {
     try {
-      const response = await axios.get('/backend/get_seeker.php', {
+      const response = await axios.get('/PartTimeConnect-Backend/get_seeker.php', {
         withCredentials: true
       });
 
@@ -45,7 +45,7 @@ function FetchProviderdata({ children }) {
   const [providerData, setProviderData] = useState(null);
   const fetchProvider = async () => {
     try {
-      const response = await axios.get('/backend/get_provider.php', {
+      const response = await axios.get('/PartTimeConnect-Backend/get_provider.php', {
         withCredentials: true
       });
 

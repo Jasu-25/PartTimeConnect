@@ -75,7 +75,7 @@ export function JobSeekersignup() {
         e.preventDefault();
         validation();
         if (Object.keys(newErrors).length === 0) {
-            let result = await axios.post("/backend/register_seeker.php",{
+            let result = await axios.post("/PartTimeConnect-Backend/register_seeker.php",{
                 fullName: formData.fullName,
                 email: formData.email,
                 password: formData.password,

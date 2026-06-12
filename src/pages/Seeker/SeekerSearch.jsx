@@ -12,9 +12,9 @@ export const SeekerSearch = () => {
     let [knownLocations, setKnownLocations] = useState([]);
     let [locationInput, setLocationInput] = useState('');
     async function fetchData() {
-        let jobsdata = await axios.get('backend/get-jobs.php');
+        let jobsdata = await axios.get('PartTimeConnect-Backend/get-jobs.php');
         setJobs(jobsdata.data);
-        let saveddata = await axios.get('backend/getsaveddata.php', {
+        let saveddata = await axios.get('PartTimeConnect-Backend/getsaveddata.php', {
             withCredentials: true
         });
         setSavedJobs(saveddata.data);

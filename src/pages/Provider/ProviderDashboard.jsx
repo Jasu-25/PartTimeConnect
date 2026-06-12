@@ -8,15 +8,15 @@ export function ProviderDashboard() {
     let [providerJobs, setProviderJobs] = useState([]);
     let [recentApplicants, setRecentApplicants] = useState([]);
     let [requiredData, setRequiredData] = useState({});
-    let [loading , setloading ] = useState(false)
+    let [loading, setloading] = useState(false)
 
     async function FetchJobs() {
         setloading(true)
-        if(!Providerdata){
+        if (!Providerdata) {
             refreshProvider();
         }
         try {
-            let result = await axios.get('/backend/getprovider-jobs.php', {
+            let result = await axios.get('/PartTimeConnect-Backend/getprovider-jobs.php', {
                 withCredentials: true
             });
             setProviderJobs(result.data);
@@ -24,14 +24,14 @@ export function ProviderDashboard() {
         } catch (err) {
             console.error(err);
         }
-        finally{
+        finally {
             setloading(false)
         }
     }
 
     async function FetchRecentApplicants() {
         try {
-            let result = await axios.get('/backend/get_recent_applications.php', {
+            let result = await axios.get('/PartTimeConnect-Backend/get_recent_applications.php', {
                 withCredentials: true
             });
             setRecentApplicants(result.data.applications);
@@ -42,10 +42,9 @@ export function ProviderDashboard() {
 
     async function FetchRequireddata() {
         try {
-            let result = await axios.get('/backend/get-required-data.php', {
+            let result = await axios.get('/PartTimeConnect-Backend/get-required-data.php', {
                 withCredentials: true
             });
-            console.log(result.data);
             setRequiredData(result.data);
         } catch (err) {
             console.log(err);
@@ -130,7 +129,18 @@ export function ProviderDashboard() {
                                         </div>
                                     )
                                 })
-                            ) : (<p className="providerdashboard-no-applications">No recent applications. When candidates apply to your jobs, they will appear here.</p>)
+                            ) : <>
+                                <div className="empty-card-container">
+                                    <div className="empty-card-box">
+                                        <div className="empty-card-icon-wrapper">
+                                            <i className="fas fa-user-clock empty-card-icon"></i>
+                                        </div>
+
+                                        <h3 className="empty-card-title">No Recent Applications</h3>
+                                        <p className="empty-card-subtitle">When candidates apply to your jobs, they will appear here.</p>
+                                    </div>
+                                </div>
+                            </>
                         }
                     </section>
 
@@ -171,7 +181,22 @@ export function ProviderDashboard() {
                                         </div>
                                     )
                                 })
-                            ) : <p className="providerdashboard-no-jobs">No jobs posted yet. Click "Post New Job" to create your first listing.</p>}
+                            ) : <>
+                                <div className="empty-card-container">
+                                    <div className="empty-card-box">
+                                        <div className="empty-card-icon-wrapper">
+                                            <i className="fas fa-briefcase empty-card-icon"></i>
+                                        </div>
+
+                                        <h3 className="empty-card-title">No Jobs Posted Yet</h3>
+                                        <p className="empty-card-subtitle">Get started by creating your very first part-time job listing to find local talent quickly.</p>
+
+                                        <button className="providerdashboard-btn-post-inline">
+                                            Post Job <span className="empty-card-plus-sign">+</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </>}
                         </div>
                     </section>
                 </main>

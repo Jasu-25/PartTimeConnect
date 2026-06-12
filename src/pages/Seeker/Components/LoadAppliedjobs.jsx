@@ -12,7 +12,7 @@ export function LoadAppliedjobs({ job, savedSatuts }) {
 
         console.log(job);
 
-        let result = await axios.post('/backend/add_savedjob.php',
+        let result = await axios.post('/PartTimeConnect-Backend/add_savedjob.php',
             {
                 id: job.jobs_id,
                 title: job.job_title,

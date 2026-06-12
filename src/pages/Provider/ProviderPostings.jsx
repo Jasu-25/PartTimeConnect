@@ -9,7 +9,7 @@ export function ProviderPostings() {
 
     async function fetchPostedJobs() {
         try {
-            const response = await axios.get('/backend/getprovider-jobs.php', {
+            const response = await axios.get('/PartTimeConnect-Backend/getprovider-jobs.php', {
                 withCredentials: true
             });
             console.log(response.data);
@@ -82,8 +82,22 @@ export function ProviderPostings() {
                                 )
                             })
                         ) : (
-                            <p className="no-jobs-message">You have not posted any jobs yet. Click "Post New Job" to create your first job posting.</p>
-                        )}
+                            <>
+                                <div className="empty-card-container">
+                                    <div className="empty-card-box">
+                                        <div className="empty-card-icon-wrapper">
+                                            <i className="fas fa-briefcase empty-card-icon"></i>
+                                        </div>
+
+                                        <h3 className="empty-card-title">No Jobs Posted Yet</h3>
+                                        <p className="empty-card-subtitle">Get started by creating your very first part-time job listing to find local talent quickly.</p>
+
+                                        <button className="providerdashboard-btn-post-inline">
+                                            Post Job <span className="empty-card-plus-sign">+</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </>)}
 
 
                     </div>

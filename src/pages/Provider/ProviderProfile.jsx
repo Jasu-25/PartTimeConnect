@@ -12,7 +12,7 @@ export function ProviderProfile() {
 
     async function FetchproviderJobs() {
         try {
-            let result = await axios.get('/backend/getprovider-jobs.php', {
+            let result = await axios.get('/PartTimeConnect-Backend/getprovider-jobs.php', {
                 withCredentials: true
             });
             setProviderJobs(result.data);
