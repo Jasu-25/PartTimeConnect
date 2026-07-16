@@ -52,7 +52,8 @@ function App() {
         <Route path='/providerjobsoverview' element={<ProviderJobsOverview />} />
         <Route path='/providerjobapplicants' element={<ProviderJobApplicants />} />
         <Route path='/providersettings' element={<ProviderSettings />} />
-        <Route path='/providerpostjob' element={<ProviderPostJob />} />
+        <Route path='/providerpostjob/:jobid' element={<ProviderPostJob />} />
+        <Route path='/providerpostjob/' element={<ProviderPostJob />} />
         <Route path='/providerUpdatejob' element={<ProviderUpdateJob />} />
         <Route path='/seekerapplieddetails/:jobid' element={<SeekerAppliedJobDetails/>} />
         <Route path='/providerHired' element={<ProviderHired />} />

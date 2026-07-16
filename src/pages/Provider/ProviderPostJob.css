@@ -424,6 +424,32 @@ body {
     box-shadow: var(--hover-shadow);
 }
 
+.providerpostjob-btn-primary:disabled {
+    opacity: 0.85;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: var(--card-shadow);
+}
+
+.providerpostjob-btn-loading {
+    min-width: 190px;
+    justify-content: center;
+}
+
+.providerpostjob-btn-loading .fa-spinner {
+    animation: providerpostjob-spin 1s linear infinite;
+}
+
+@keyframes providerpostjob-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .providerpostjob-btn-secondary {
     background: var(--white);
     color: var(--gray);

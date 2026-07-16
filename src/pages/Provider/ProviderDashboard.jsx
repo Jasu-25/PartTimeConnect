@@ -3,12 +3,14 @@ import { ProviderHeader } from './ProviderHeader';
 import { Providerddata } from '../../main';
 import axios from 'axios';
 import { getInitials } from '../../Utils/seekerutils';
+import { useNavigate } from 'react-router';
 export function ProviderDashboard() {
     let { providerData: Providerdata, refreshProvider: refreshProvider } = useContext(Providerddata);
     let [providerJobs, setProviderJobs] = useState([]);
     let [recentApplicants, setRecentApplicants] = useState([]);
     let [requiredData, setRequiredData] = useState({});
     let [loading, setloading] = useState(false)
+    let DashboardNavigate = useNavigate();
 
     async function FetchJobs() {
         setloading(true)
@@ -103,7 +105,7 @@ export function ProviderDashboard() {
                     <section className="providerdashboard-section">
                         <div className="providerdashboard-section-header">
                             <h2 className="providerdashboard-section-heading">Recent Applications</h2>
-                            <a href="#" className="providerdashboard-link-view">View All Applications</a>
+                            <a className="providerdashboard-link-view" onClick={()=>{DashboardNavigate('/providerjobsoverview')}}>View All Applications</a>
                         </div>
                         {
                             recentApplicants.length !== 0 ? (
@@ -147,8 +149,8 @@ export function ProviderDashboard() {
                     <section className="providerdashboard-section">
                         <div className="providerdashboard-section-header">
                             <h2 className="providerdashboard-section-heading">Active Jobs</h2>
-                            <button className="providerdashboard-btn-post-inline">
-                                <i className="fas fa-plus"></i> Post New Job
+                            <button className="providerdashboard-btn-post-inline" onClick={()=>{DashboardNavigate('/providerpostjob')}}>
+                                Post New Job <i className="fas fa-plus"></i> 
                             </button>
                         </div>
 
@@ -191,7 +193,7 @@ export function ProviderDashboard() {
                                         <h3 className="empty-card-title">No Jobs Posted Yet</h3>
                                         <p className="empty-card-subtitle">Get started by creating your very first part-time job listing to find local talent quickly.</p>
 
-                                        <button className="providerdashboard-btn-post-inline">
+                                        <button className="providerdashboard-btn-post-inline" onClick={()=>{DashboardNavigate('/providerpostjob')}}>
                                             Post Job <span className="empty-card-plus-sign">+</span>
                                         </button>
                                     </div>

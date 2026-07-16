@@ -173,7 +173,7 @@
 
 .providerdashboard-link-view:hover {
     background: #eff6ff;
-    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* View Profile Button */
@@ -721,6 +721,149 @@
 
 .providerdashboard-dropdown-item.logout i {
     color: var(--pd-danger);
+}
+
+.Somethingwrong-container-Active{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+.Somethingwrong-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--pd-space-32) var(--pd-space-16);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Base Empty/Error State Card Box */
+.Somethingwrong-box {
+    background: var(--pd-white);
+    border: 1px solid var(--pd-border);
+    border-radius: var(--pd-radius);
+    padding: var(--pd-space-32) var(--pd-space-24);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--pd-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pd-space-16);
+    transition: var(--pd-transition);
+}
+
+/* Specific error state visual card tuning */
+.Somethingwrong-error-state {
+    border-color: rgba(239, 68, 68, 0.2); /* Soft integration of danger color on border */
+}
+
+/* Soft red/danger background tint for the error circle */
+.Somethingwrong-error-icon-bg {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(239, 68, 68, 0.1); /* 10% opacity of danger color */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--pd-space-8);
+}
+
+/* High-contrast bold Exclamation symbol */
+.Somethingwrong-error-symbol {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--pd-danger);
+    line-height: 1;
+}
+
+/* Title & Subtitle */
+.Somethingwrong-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pd-text-main);
+    margin: 0;
+}
+
+.Somethingwrong-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--pd-text-muted);
+    margin: 0 0 var(--pd-space-8) 0;
+}
+
+/* Action Button */
+.Somethingwrong-action-btn {
+    background-color: var(--pd-primary);
+    color: var(--pd-white);
+    border: none;
+    padding: var(--pd-space-12) var(--pd-space-24);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--pd-space-8);
+    transition: var(--pd-transition);
+}
+
+.Somethingwrong-btn-retry {
+    background-color: transparent;
+    color: var(--pd-text-main);
+}
+
+.Somethingwrong-btn-icon {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* States & Micro-interactions */
+.Somethingwrong-btn-retry:hover {
+    background-color: var(--pd-bg);
+    border-color: var(--pd-primary);
+    color: var(--pd-primary);
+}
+
+.Somethingwrong-btn-retry:hover .Somethingwrong-btn-icon {
+    transform: rotate(180deg);
+}
+
+.Somethingwrong-btn-retry:active {
+    transform: scale(0.98);
+}
+
+/* Mobile Breakpoint Optimization (down to 320px) */
+@media (max-width: 320px) {
+    .Somethingwrong-box {
+        padding: var(--pd-space-24) var(--pd-space-16);
+    }
+    
+    .Somethingwrong-title {
+        font-size: 18px;
+    }
+    
+    .Somethingwrong-subtitle {
+        font-size: 13px;
+    }
+    
+    .Somethingwrong-action-btn {
+        width: 100%;
+        padding: var(--pd-space-12) var(--pd-space-16);
+    }
 }
 
 /* --- 480px & Mobile Dropdown Responsiveness --- */

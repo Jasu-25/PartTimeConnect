@@ -1,19 +1,43 @@
+import { useContext, useEffect, useState } from 'react';
 import { ProviderHeader } from './ProviderHeader'
 import './ProviderJobsOverview.css'
+import axios from 'axios';
+import { Providerddata } from '../../main';
+import { getInitials } from '../../Utils/seekerutils';
 
 export function ProviderJobsOverview() {
+    let { providerData: Providerdata, refreshProvider: refreshProvider } = useContext(Providerddata);
+    let [providerJobs, setProviderJobs] = useState([]);
+
+    async function FetchJobs() {
+        if (!Providerdata) {
+            refreshProvider();
+        }
+        try {
+            let result = await axios.get('/PartTimeConnect-Backend/getprovider-jobs.php', {
+                withCredentials: true
+            });
+            setProviderJobs(result.data);
+
+        } catch (err) {
+            console.error(err);
+        }
+
+    }
+    useEffect(() => {
+        FetchJobs();
+    }, []);
     return (
         <div className="providerjobsoverview">
-            <ProviderHeader/>
+            <ProviderHeader />
             <div className="main-content">
                 <div className="container">
                     <section className="company-header">
                         <div className="company-logo-container">
-                            <h3 className="company-logo"></h3>
+                            <h3 className="company-logo">{getInitials(Providerdata?.company_name || 'Loading')}</h3>
                         </div>
                         <div className="company-info">
-                            <h1 className="company-name">TechStart Solutions</h1>
-                            <p className="company-tagline">Innovating the future, one solution at a time.</p>
+                            <h1 className="company-name">{Providerdata?.company_name || 'Loading'}</h1>
                             <div className="company-stats">
                                 <div className="stat-item">
                                     <span className="stat-number posted-jobs">12</span>
@@ -43,107 +67,40 @@ export function ProviderJobsOverview() {
                         </div>
 
                         <div className="job-grid">
+                            {
+                                (providerJobs?.length !== 0 ? <>
+                                    <a href="job-details-applicants.html?jobId=1" className="job-card">
+                                        <div className="job-card-header">
+                                            <h3 className="job-title">Part-Time Marketing Assistant</h3>
+                                            <span className="job-type">Part-Time</span>
+                                        </div>
+                                        <div className="job-card-details">
+                                            <p className="job-salary"><i className="fas fa-dollar-sign"></i> ₹25,000 / month</p>
+                                            <p className="job-location"><i className="fas fa-map-marker-alt"></i> San Francisco, CA</p>
+                                            <p className="job-posted-date"><i className="fas fa-calendar-alt"></i> Posted 2 days ago</p>
+                                        </div>
+                                        <div className="job-card-footer">
+                                            <span className="applicants-count"><i className="fas fa-users"></i> 15 Applied</span>
+                                            <span className="job-status active"><i className="fas fa-circle"></i> Active</span>
+                                        </div>
+                                    </a>
+                                </> : <>
+                                    <div className="empty-card-container">
+                                        <div className="empty-card-box">
+                                            <div className="empty-card-icon-wrapper">
+                                                <i className="fas fa-briefcase empty-card-icon"></i>
+                                            </div>
 
-                            <a href="job-details-applicants.html?jobId=1" className="job-card">
-                                <div className="job-card-header">
-                                    <h3 className="job-title">Part-Time Marketing Assistant</h3>
-                                    <span className="job-type">Part-Time</span>
-                                </div>
-                                <div className="job-card-details">
-                                    <p className="job-salary"><i className="fas fa-dollar-sign"></i> ₹25,000 / month</p>
-                                    <p className="job-location"><i className="fas fa-map-marker-alt"></i> San Francisco, CA</p>
-                                    <p className="job-posted-date"><i className="fas fa-calendar-alt"></i> Posted 2 days ago</p>
-                                </div>
-                                <div className="job-card-footer">
-                                    <span className="applicants-count"><i className="fas fa-users"></i> 15 Applied</span>
-                                    <span className="job-status active"><i className="fas fa-circle"></i> Active</span>
-                                </div>
-                            </a>
+                                            <h3 className="empty-card-title">No Jobs Posted Yet</h3>
+                                            <p className="empty-card-subtitle">Get started by creating your very first part-time job listing to find local talent quickly.</p>
 
-
-                            <a href="job-details-applicants.html?jobId=2" className="job-card">
-                                <div className="job-card-header">
-                                    <h3 className="job-title">Remote Customer Support Specialist</h3>
-                                    <span className="job-type">Remote</span>
-                                </div>
-                                <div className="job-card-details">
-                                    <p className="job-salary"><i className="fas fa-dollar-sign"></i> ₹20,000 / month</p>
-                                    <p className="job-location"><i className="fas fa-globe"></i> Remote</p>
-                                    <p className="job-posted-date"><i className="fas fa-calendar-alt"></i> Posted 5 days ago</p>
-                                </div>
-                                <div className="job-card-footer">
-                                    <span className="applicants-count"><i className="fas fa-users"></i> 22 Applied</span>
-                                    <span className="job-status active"><i className="fas fa-circle"></i> Active</span>
-                                </div>
-                            </a>
-
-
-                            <a href="job-details-applicants.html?jobId=3" className="job-card">
-                                <div className="job-card-header">
-                                    <h3 className="job-title">Internship - Software Development</h3>
-                                    <span className="job-type">Internship</span>
-                                </div>
-                                <div className="job-card-details">
-                                    <p className="job-salary"><i className="fas fa-dollar-sign"></i> ₹10,000 / month</p>
-                                    <p className="job-location"><i className="fas fa-map-marker-alt"></i> Bengaluru, India</p>
-                                    <p className="job-posted-date"><i className="fas fa-calendar-alt"></i> Posted 1 week ago</p>
-                                </div>
-                                <div className="job-card-footer">
-                                    <span className="applicants-count"><i className="fas fa-users"></i> 30 Applied</span>
-                                    <span className="job-status active"><i className="fas fa-circle"></i> Active</span>
-                                </div>
-                            </a>
-
-
-                            <a href="job-details-applicants.html?jobId=4" className="job-card">
-                                <div className="job-card-header">
-                                    <h3 className="job-title">Full-Time Data Analyst</h3>
-                                    <span className="job-type">Full-Time</span>
-                                </div>
-                                <div className="job-card-details">
-                                    <p className="job-salary"><i className="fas fa-dollar-sign"></i> ₹45,000 / month</p>
-                                    <p className="job-location"><i className="fas fa-map-marker-alt"></i> New York, NY</p>
-                                    <p className="job-posted-date"><i className="fas fa-calendar-alt"></i> Posted 3 weeks ago</p>
-                                </div>
-                                <div className="job-card-footer">
-                                    <span className="applicants-count"><i className="fas fa-users"></i> 18 Applied</span>
-                                    <span className="job-status inactive"><i className="fas fa-circle"></i> Closed</span>
-                                </div>
-                            </a>
-
-
-                            <a href="job-details-applicants.html?jobId=5" className="job-card">
-                                <div className="job-card-header">
-                                    <h3 className="job-title">Part-Time Graphic Designer</h3>
-                                    <span className="job-type">Part-Time</span>
-                                </div>
-                                <div className="job-card-details">
-                                    <p className="job-salary"><i className="fas fa-dollar-sign"></i> ₹18,000 / month</p>
-                                    <p className="job-location"><i className="fas fa-map-marker-alt"></i> London, UK</p>
-                                    <p className="job-posted-date"><i className="fas fa-calendar-alt"></i> Posted 1 month ago</p>
-                                </div>
-                                <div className="job-card-footer">
-                                    <span className="applicants-count"><i className="fas fa-users"></i> 10 Applied</span>
-                                    <span className="job-status active"><i className="fas fa-circle"></i> Active</span>
-                                </div>
-                            </a>
-
-
-                            <a href="job-details-applicants.html?jobId=6" className="job-card">
-                                <div className="job-card-header">
-                                    <h3 className="job-title">Remote Content Writer</h3>
-                                    <span className="job-type">Remote</span>
-                                </div>
-                                <div className="job-card-details">
-                                    <p className="job-salary"><i className="fas fa-dollar-sign"></i> ₹22,000 / month</p>
-                                    <p className="job-location"><i className="fas fa-globe"></i> Remote</p>
-                                    <p className="job-posted-date"><i className="fas fa-calendar-alt"></i> Posted 2 months ago</p>
-                                </div>
-                                <div className="job-card-footer">
-                                    <span className="applicants-count"><i className="fas fa-users"></i> 12 Applied</span>
-                                    <span className="job-status inactive"><i className="fas fa-circle"></i> Closed</span>
-                                </div>
-                            </a>
+                                            <button className="providerdashboard-btn-post-inline" onClick={() => { DashboardNavigate('/providerpostjob') }}>
+                                                Post Job <span className="empty-card-plus-sign">+</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </>)
+                            }
                         </div>
                     </section>
                 </div>
