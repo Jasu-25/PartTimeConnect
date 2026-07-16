@@ -709,6 +709,11 @@
     color: var(--pd-primary);
 }
 
+.providerdashboard-dropdown-item.active{
+    background-color: #f1f5f9;
+    color: var(--pd-primary);
+}
+
 .providerdashboard-dropdown-divider {
     border: 0;
     border-top: 1px solid var(--pd-border);

@@ -68,7 +68,7 @@ export function ProviderDashboard() {
                 <main className="providerdashboard-container">
 
                     <section className="providerdashboard-hero">
-                        <h1 className="providerdashboard-welcome">Welcome back ! {Providerdata?.company_name || "Company Name"} </h1>
+                        <h1 className="providerdashboard-welcome"> <span style={{ color: "black" }}>Welcome back!</span> {Providerdata?.company_name || "Company Name"} </h1>
                         <p className="providerdashboard-lead">Manage your job postings and find the perfect candidates</p>
                     </section>
 
@@ -176,7 +176,7 @@ export function ProviderDashboard() {
                                                 {job.job_description}
                                             </p>
                                             <div className="providerdashboard-job-footer">
-                                                <button className="providerdashboard-btn-edit"><i className="fas fa-edit" data-jobid={job.jobs_id} ></i> Edit</button>
+                                                <button className="providerdashboard-btn-edit" onClick={()=>(DashboardNavigate(`/providerpostjob/${job.jobs_id}`))}><i className="fas fa-edit"  ></i> Edit</button>
                                                 <button className="providerdashboard-btn-view"><i className="fas fa-eye"></i> View
                                                     Applicants</button>
                                             </div>
