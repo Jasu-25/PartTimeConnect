@@ -50,7 +50,7 @@ function App() {
         <Route path='/providerprofileupdate' element={<ProviderProfileUpdate />} />
         <Route path='/providerpostings' element={<ProviderPostings />} />
         <Route path='/providerjobsoverview' element={<ProviderJobsOverview />} />
-        <Route path='/providerjobapplicants' element={<ProviderJobApplicants />} />
+        <Route path='/providerjobapplicants/:jobid' element={<ProviderJobApplicants />} />
         <Route path='/providersettings' element={<ProviderSettings />} />
         <Route path='/providerpostjob/:jobid' element={<ProviderPostJob />} />
         <Route path='/providerpostjob/' element={<ProviderPostJob />} />
