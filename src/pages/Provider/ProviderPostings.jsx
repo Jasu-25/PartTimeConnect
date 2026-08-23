@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { ProviderHeader } from './ProviderHeader'
 import './ProviderPostings.css'
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 export function ProviderPostings() {
 
     let [PostedJobs, setPostedJobs] = useState([]);
+    const applicantsNavigation = useNavigate()
 
     async function fetchPostedJobs() {
         try {
@@ -74,7 +76,7 @@ export function ProviderPostings() {
                                                 <span className="job-date">Posted on {job?.job_posted}</span>
                                             </div>
                                         </div>
-                                        <button className="view-applicants-btn" data-jobid={job?.jobs_id}>
+                                        <button className="view-applicants-btn" onClick={()=>(applicantsNavigation(`/providerjobapplicants/${job?.jobs_id}`))}>
                                             <span className="material-symbols-outlined icon-btn">group</span>
                                             View Applicants ({job?.Total_Applicants})
                                         </button>

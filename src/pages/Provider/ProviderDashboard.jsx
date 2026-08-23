@@ -127,7 +127,7 @@ export function ProviderDashboard() {
                                                     <span className="providerdashboard-app-date">{applicant.applied_date}</span>
                                                 </div>
                                             </div>
-                                            <button className="providerdashboard-btn-profile" data-seekerid={applicant.seeker_id}>View Profile</button>
+                                            <button className="providerdashboard-btn-profile" onClick={()=>(DashboardNavigate(`/applicantProfile/${applicant.seeker_id}`))}>View Profile</button>
                                         </div>
                                     )
                                 })
@@ -177,7 +177,7 @@ export function ProviderDashboard() {
                                             </p>
                                             <div className="providerdashboard-job-footer">
                                                 <button className="providerdashboard-btn-edit" onClick={()=>(DashboardNavigate(`/providerpostjob/${job.jobs_id}`))}><i className="fas fa-edit"  ></i> Edit</button>
-                                                <button className="providerdashboard-btn-view"><i className="fas fa-eye"></i> View
+                                                <button className="providerdashboard-btn-view" onClick={()=>(DashboardNavigate(`/providerjobapplicants/${job.jobs_id}`))} ><i className="fas fa-eye"></i> View
                                                     Applicants</button>
                                             </div>
                                         </div>

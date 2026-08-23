@@ -236,6 +236,23 @@
     transform: translateY(-2px);
 }
 
+/* Sending state for inline button loaders */
+.providerjobsoverview .btn-sending {
+    min-width: 150px;
+    justify-content: center;
+}
+
+.providerjobsoverview .btn-sending .fa-spinner {
+    margin-right: 8px;
+    animation: spin 1s linear infinite;
+}
+
+.providerjobsoverview button[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
 .providerjobsoverview .btn-danger {
     background-color: var(--danger-color);
     color: var(--white);
@@ -567,7 +584,7 @@
     justify-content: center;
     font-size: 1.6rem;
     background-color: var(--lblue);
-    border: 3px solid var(--white);
+    border: 3px solid var(--blue);
     color: var(--blue);
 }
 

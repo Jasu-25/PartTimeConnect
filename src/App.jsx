@@ -25,6 +25,7 @@ import ProviderUpdateJob from './pages/Provider/ProviderUpdateJob'
 import { SeekerAppliedJobDetails } from './pages/Seeker/SeekerAppliedJobDetails'
 import ProviderHired from './pages/Provider/ProviderHired'
 import { Uiloader } from './pages/landingpage/Ui-loader'
+import ApplicantProfile from './pages/Provider/ApplicantProfile'
 function App() {
   return (
     <>
@@ -58,6 +59,8 @@ function App() {
         <Route path='/seekerapplieddetails/:jobid' element={<SeekerAppliedJobDetails/>} />
         <Route path='/providerHired' element={<ProviderHired />} />
         <Route path='/loader' element={ <Uiloader/> } />
+        <Route path='/applicantProfile/:seekerid' element={<ApplicantProfile/>}/>
+
       </Routes>
     </>
   )
