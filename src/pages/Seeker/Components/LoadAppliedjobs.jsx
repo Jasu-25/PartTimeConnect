@@ -10,7 +10,6 @@ export function LoadAppliedjobs({ job, savedSatuts }) {
     }, [savedSatuts]);
     async function handleSaveJob() {
 
-        console.log(job);
 
         let result = await axios.post('/PartTimeConnect-Backend/add_savedjob.php',
             {

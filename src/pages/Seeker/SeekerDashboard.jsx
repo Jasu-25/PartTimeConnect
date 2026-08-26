@@ -4,6 +4,7 @@ import { Requireddata } from "../../main";
 import axios from "axios";
 import LoadJobs from "./Components/LoadJobs";
 import { Uiloader } from "../landingpage/Ui-loader";
+import { useNavigate } from "react-router";
 
 export function SeekerDashboard() {
 
@@ -13,6 +14,8 @@ export function SeekerDashboard() {
     let [knownLocations, setKnownLocations] = useState([]);
     let [RequiredData, setRequiredData] = useState({ applications_count: 0, saved_count: 0 });
     let [loading, setloading] = useState(false);
+    let [isJobsDisplayed, setIsJobsDisplayed] = useState(false);
+    let dashboardNavigation = useNavigate();
     async function fetchData() {
         setloading(true);
         if (!Seekerdata) {
@@ -37,21 +40,7 @@ export function SeekerDashboard() {
             applications_count: result.data.applications_count,
             saved_count: result.data.saved_jobs_count
         });
-        console.log(RequiredData);
     }
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    useEffect(() => {
-        storeloactions();
-    }, [Jobs]);
-
-    useEffect(() => {
-        GetRequireddata();
-    }, [SavedJobs]);
-
     function issaved(id) {
         let savedjobids = false;
         SavedJobs.forEach((data) => {
@@ -86,6 +75,37 @@ export function SeekerDashboard() {
         });
     }
 
+    function isJobsAviable() {
+        let JobsArray = [];
+        JobsArray = Jobs.filter((job) => {
+            if (
+                Seekerdata?.location &&
+                job?.job_location &&
+                job?.job_status === 'open' &&
+                job.job_location.toLowerCase().includes(Seekerdata.location.toLowerCase()) &&
+                isLocationAvailable(Seekerdata.location)
+            ) {
+                return (job)
+            }
+        })
+        if (JobsArray.length !== 0) {
+            setIsJobsDisplayed(true)
+        }
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        storeloactions();
+        isJobsAviable();
+    }, [Jobs]);
+
+    useEffect(() => {
+        GetRequireddata();
+    }, [SavedJobs]);
+
 
     return (
         <>
@@ -96,7 +116,7 @@ export function SeekerDashboard() {
                     <main className="seekerdashboard-container">
                         <section className="seekerdashboard-welcome-section">
                             <div className="seekerdashboard-welcome-text">
-                                <h1 className="seekerdashboard-title">Welcome back, {Seekerdata ? Seekerdata.name : "Guest"}</h1>
+                                <h1 className="seekerdashboard-title">Welcome back, <span className="Name-SpanTag">{Seekerdata ? Seekerdata.name : "Guest"}</span></h1>
                                 <p className="seekerdashboard-subtitle">Find your perfect part-time opportunity in {Seekerdata ? Seekerdata.location : "your location"}
                                 </p>
                             </div>
@@ -134,12 +154,35 @@ export function SeekerDashboard() {
                                     job.job_location.toLowerCase().includes(Seekerdata.location.toLowerCase()) &&
                                     isLocationAvailable(Seekerdata.location)
                                 ) {
+                                    // setIsJobsDisplayed(true);
                                     let savesatus = issaved(job.jobs_id);
                                     return (
                                         <LoadJobs key={job.job_id} job={job} savedstate={savesatus} />
                                     )
                                 }
+
                             })}
+
+                            {!isJobsDisplayed ?
+                                <div class="Nolocation-container">
+                                    <div class="Nolocation-box">
+                                        <div class="Nolocation-icon-wrapper">
+                                            <i class="fas fa-map-marker-alt Nolocation-icon"></i>
+                                        </div>
+
+                                        <h3 class="Nolocation-title">No jobs found in your location sorry</h3>
+
+                                        <button class="Nolocation-action-btn" id="Nolocation-action-button" onClick={() => (dashboardNavigation('/seekersearch'))}>
+                                            <i class="fas fa-search-location Nolocation-btn-icon"></i>
+                                            <span>Try another location</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                : ''
+                            }
+
+
+
                         </div>
                     </main>
                 </div>

@@ -5,8 +5,8 @@ import { useParams } from 'react-router'
 import axios from 'axios'
 
 export default function ApplicantProfile() {
-    const applicantId = useParams()?.Seekerid
-    const [appliedApplicantID, setAppliedApplicantId] = useState(applicantId);
+    const applicantId = useParams();
+    const [appliedApplicantID, setAppliedApplicantId] = useState(applicantId?.seekerid);
     const [appliedApplicantData, setAppliedApplicantData] = useState([]);
     const Skills = (appliedApplicantData?.skills && appliedApplicantData?.skills !== "") ? appliedApplicantData?.skills.split(",").map(skill => skill.trim()).filter(skill => skill !== "") : [];
     const Education = (appliedApplicantData?.education && appliedApplicantData?.education !== "") ? appliedApplicantData?.education.split(",").map(edu => edu.trim()).filter(edu => edu !== "") : [];
@@ -31,9 +31,9 @@ export default function ApplicantProfile() {
     }, [])
 
     useEffect(() => {
-        setAppliedApplicantId()
+        setAppliedApplicantId(applicantId?.seekerid)
         fetchApplicantProfile()
-    }, [applicantId])
+    }, [applicantId?.seekerid])
 
     return (
         <div className="seekerprofile">

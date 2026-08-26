@@ -12,7 +12,6 @@ export default function LoadJobs({ job, savedstate, setSavedJobs }) {
     }, [savedstate]);
     async function handleSaveJob() {
 
-        console.log(job);
 
         let result = await axios.post('/PartTimeConnect-Backend/add_savedjob.php',
             {
@@ -32,7 +31,6 @@ export default function LoadJobs({ job, savedstate, setSavedJobs }) {
     }
 
     function handleapplynow(event) {
-        console.log(event.currentTarget.dataset.jobid);
         applynow(`/seekerapplieddetails/${event.currentTarget.dataset.jobid}`);
     }
 

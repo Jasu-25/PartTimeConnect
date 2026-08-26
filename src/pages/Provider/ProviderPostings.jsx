@@ -14,7 +14,6 @@ export function ProviderPostings() {
             const response = await axios.get('/PartTimeConnect-Backend/getprovider-jobs.php', {
                 withCredentials: true
             });
-            console.log(response.data);
             setPostedJobs(response.data);
         } catch (error) {
             console.error('Error fetching posted jobs:', error);

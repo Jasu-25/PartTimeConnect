@@ -291,6 +291,123 @@ body {
     /* Blue */
 }
 
+/* 1. LAYOUT CONTAINER */
+.Nohired-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--pd-space-32) var(--pd-space-16); /* 8-point spacing system[cite: 3] */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 2. CARD SURFACE */
+.Nohired-box {
+    background: var(--pd-white);
+    border: 1px solid var(--pd-border);
+    border-radius: var(--pd-radius);
+    padding: var(--pd-space-32) var(--pd-space-24); /* Generous padding for breathing room[cite: 3] */
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--pd-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pd-space-16); /* 8-point structural gap rhythm[cite: 3] */
+    transition: var(--pd-transition);
+}
+
+/* 3. VISUAL ANCHOR / ACCENT ICON */
+.Nohired-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(34, 197, 94, 0.1); /* 10% opacity variation of --pd-success[cite: 3] */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--pd-space-8);
+}
+
+.Nohired-icon {
+    font-size: 24px;
+    color: var(--pd-success);
+}
+
+/* 4. TYPOGRAPHY & SCANNABLE COPY HIERARCHY */
+.Nohired-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pd-text-main);
+    margin: 0;
+    line-height: 1.2; /* Tighter line-height for headings[cite: 3] */
+}
+
+.Nohired-subtitle {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    line-height: 1.5; /* Comfortable body text ratio[cite: 3] */
+    color: var(--pd-text-muted);
+    margin: 0 0 var(--pd-space-8) 0;
+}
+
+/* 5. CONVERSION CTA BUTTON (RE-PROPORTIONED) */
+.Nohired-action-btn {
+    background-color: var(--pd-primary);
+    color: var(--pd-white);
+    border: none;
+    /* Vertically scaled to 16px, horizontally scaled to 32px for a balanced 1:2 ratio[cite: 3] */
+    padding: var(--pd-space-16) var(--pd-space-32); 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px; /* Scaled typography for higher visual weight */
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--pd-space-8);
+    box-shadow: 0 4px 6px -1px rgba(0, 123, 255, 0.2);
+    transition: var(--pd-transition);
+}
+
+.Nohired-btn-icon {
+    font-size: 15px;
+}
+
+/* 6. MICRO-INTERACTIONS & HOVER STATES */
+.Nohired-action-btn:hover {
+    background-color: var(--pd-primary-hover);
+    box-shadow: 0 6px 12px -2px rgba(0, 123, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.Nohired-action-btn:active {
+    transform: scale(0.98);
+}
+
+/* 7. RESPONSIVE MOBILE BREAKPOINTS (DOWN TO 320PX) */
+@media (max-width: 320px) {
+    .Nohired-box {
+        padding: var(--pd-space-24) var(--pd-space-16);
+    }
+    
+    .Nohired-title {
+        font-size: 18px;
+    }
+    
+    .Nohired-subtitle {
+        font-size: 13px;
+    }
+    
+    .Nohired-action-btn {
+        width: 100%;
+        padding: var(--pd-space-16) var(--pd-space-24); /* Full-width adaptive button on small displays */
+    }
+}
+
 /* --- Responsiveness (Mobile-First Approach) --- */
 
 /* Tablet Layout (2 cards per row) */

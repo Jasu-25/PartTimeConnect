@@ -36,14 +36,12 @@ export function JobSeekerlogin() {
     async function handleSubmit(e) {
         e.preventDefault();
         validation();
-        console.log(password);
         if (Object.keys(newErrors).length === 0) {
             let result = await axios.post("/PartTimeConnect-Backend/seeker_log.php", {
                 email: email,
                 password:password
             });
             let data = result.data;
-            console.log(data);
             if (data.status === "error" || data.status === "dataerror") {
                 setErrors({result:data.message})
             }else{

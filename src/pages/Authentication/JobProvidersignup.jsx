@@ -96,7 +96,6 @@ export function JobProvidersignup() {
                 companyDescription: formData.companyDescription
             });
             let data = result.data;
-            console.log(data);
             if (data.success === false || data.status === "duplicate") {
                 setErrors({ result: data.message })
             } else {

@@ -344,8 +344,301 @@ body {
     background-color: #c82333;
 }
 
+/* Validation Styles */
+.ps-error-message {
+    display: block;
+    color: var(--danger-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    font-weight: 500;
+}
 
+.ps-success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+    font-weight: 500;
+    text-align: center;
+}
 
+.ps-password-hint {
+    display: block;
+    color: var(--gray);
+    font-size: 0.8rem;
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.ps-modal-content input[type="password"].error {
+    border-color: var(--danger-color);
+    background-color: rgba(220, 53, 69, 0.05);
+}
+
+.ps-modal-content input[type="password"].error:focus {
+    border-color: var(--danger-color);
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2);
+}
+
+.Accountdeleted-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--pd-space-32) var(--pd-space-16);
+    /* 8-point system spacing[cite: 3] */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 2. CARD SURFACE */
+.Accountdeleted-box {
+    background: var(--pd-white);
+    border: 1px solid var(--pd-border);
+    border-radius: var(--pd-radius);
+    padding: var(--pd-space-32) var(--pd-space-24);
+    /* Generous breathing room[cite: 3] */
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--pd-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pd-space-16);
+    /* 8-point gap rhythm[cite: 3] */
+    transition: var(--pd-transition);
+}
+
+/* 3. SUCCESS ICON ANCHOR */
+.Accountdeleted-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(34, 197, 94, 0.1);
+    /* Soft 10% tint of --pd-success[cite: 3] */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--pd-space-8);
+}
+
+.Accountdeleted-icon {
+    font-size: 24px;
+    color: var(--pd-success);
+}
+
+/* 4. TYPOGRAPHY HIERARCHY */
+.Accountdeleted-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pd-text-main);
+    margin: 0;
+    line-height: 1.2;
+    /* Tighter line-height for headings[cite: 3] */
+}
+
+.Accountdeleted-redirect-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pd-space-12);
+}
+
+.Accountdeleted-subtitle {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    /* Comfortable body text ratio[cite: 3] */
+    color: var(--pd-text-muted);
+    margin: 0;
+}
+
+/* 5. LOADER RING INTERACTION */
+.Accountdeleted-loader-ring {
+    width: 28px;
+    height: 28px;
+    border: 3px solid var(--pd-border);
+    border-top: 3px solid var(--pd-primary);
+    border-radius: 50%;
+    animation: Accountdeleted-spin 0.8s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+}
+
+/* Smooth Rotation Animation */
+@keyframes Accountdeleted-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 6. RESPONSIVE BREAKPOINTS (DOWN TO 320PX) */
+@media (max-width: 320px) {
+    .Accountdeleted-box {
+        padding: var(--pd-space-24) var(--pd-space-16);
+    }
+
+    .Accountdeleted-title {
+        font-size: 18px;
+    }
+
+    .Accountdeleted-subtitle {
+        font-size: 13px;
+    }
+}
+
+.Accountdeleted-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Dark grey backdrop tint with blur */
+    background-color: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: var(--pd-space-16);
+    box-sizing: border-box;
+
+    /* Ensures popup stays above all page content */
+    z-index: 99999;
+
+    /* Smooth Pop-in Animation */
+    animation: Accountdeleted-fade-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.Accountdeleted-overlay.show{
+    display: flex;
+}
+
+/* 2. MODAL CARD SURFACE */
+.Accountdeleted-box {
+    background: var(--pd-white);
+    border: 1px solid var(--pd-border);
+    border-radius: var(--pd-radius);
+    padding: var(--pd-space-32) var(--pd-space-24);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pd-space-16);
+
+    /* Pop scale effect */
+    animation: Accountdeleted-scale-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 3. SUCCESS ICON ANCHOR */
+.Accountdeleted-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(34, 197, 94, 0.1);
+    /* Soft 10% tint of --pd-success */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--pd-space-8);
+}
+
+.Accountdeleted-icon {
+    font-size: 24px;
+    color: var(--pd-success);
+}
+
+/* 4. TYPOGRAPHY HIERARCHY */
+.Accountdeleted-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pd-text-main);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.Accountdeleted-redirect-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pd-space-12);
+}
+
+.Accountdeleted-subtitle {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--pd-text-muted);
+    margin: 0;
+}
+
+/* 5. LOADER RING INTERACTION */
+.Accountdeleted-loader-ring {
+    width: 28px;
+    height: 28px;
+    border: 3px solid var(--pd-border);
+    border-top: 3px solid var(--pd-primary);
+    border-radius: 50%;
+    animation: Accountdeleted-spin 0.8s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes Accountdeleted-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes Accountdeleted-scale-up {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes Accountdeleted-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 6. RESPONSIVE BREAKPOINTS (DOWN TO 320PX) */
+@media (max-width: 320px) {
+    .Accountdeleted-box {
+        padding: var(--pd-space-24) var(--pd-space-16);
+    }
+
+    .Accountdeleted-title {
+        font-size: 18px;
+    }
+
+    .Accountdeleted-subtitle {
+        font-size: 13px;
+    }
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {

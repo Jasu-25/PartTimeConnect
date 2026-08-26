@@ -105,34 +105,50 @@ export function ProviderProfile() {
 
                     <div className="jobs-grid">
 
-                        {providerJobs.length === 0 ? (<div className="no-jobs-message">No jobs posted yet.</div>) : (
-                            providerJobs.map((job) => (
-                                <div className="job-card">
-                                    <div className="job-header">
-                                        <h3 className="job-title">{job?.job_title}</h3>
-                                        <span className="job-type part-time">{job?.job_type}</span>
+                        {providerJobs.length === 0 ?
+
+                            <div className="empty-card-container">
+                                <div className="empty-card-box">
+                                    <div className="empty-card-icon-wrapper">
+                                        <i className="fas fa-briefcase empty-card-icon"></i>
                                     </div>
-                                    <div className="job-details">
-                                        <div className="job-info">
-                                            <i className="fas fa-dollar-sign"></i>
-                                            <span className="job-salary">{job?.job_salary}/ {job.job_salary_time}</span>
-                                        </div>
-                                        <div className="job-info">
-                                            <i className="fas fa-map-marker-alt"></i>
-                                            <span className="job-location">{job?.job_location}</span>
-                                        </div>
-                                        <div className="job-info">
-                                            <i className="fas fa-calendar-alt"></i>
-                                            <span className="job-date">Posted on {job?.job_posted}</span>
-                                        </div>
-                                    </div>
-                                    <button className="view-applicants-btn" data-jobid={job?.jobs_id}>
-                                        <i className="fas fa-users"></i>
-                                        View Applicants
+
+                                    <h3 className="empty-card-title">No Jobs Posted Yet</h3>
+                                    <p className="empty-card-subtitle">Get started by creating your very first part-time job listing to find local talent quickly.</p>
+
+                                    <button className="providerdashboard-btn-post-inline" onClick={() => { DashboardNavigate('/providerpostjob') }}>
+                                        Post Job <span className="empty-card-plus-sign">+</span>
                                     </button>
                                 </div>
-                            ))
-                        )}
+                            </div>
+                            : (
+                                providerJobs.map((job) => (
+                                    <div className="job-card">
+                                        <div className="job-header">
+                                            <h3 className="job-title">{job?.job_title}</h3>
+                                            <span className="job-type part-time">{job?.job_type}</span>
+                                        </div>
+                                        <div className="job-details">
+                                            <div className="job-info">
+                                                <i className="fas fa-dollar-sign"></i>
+                                                <span className="job-salary">{job?.job_salary}/ {job.job_salary_time}</span>
+                                            </div>
+                                            <div className="job-info">
+                                                <i className="fas fa-map-marker-alt"></i>
+                                                <span className="job-location">{job?.job_location}</span>
+                                            </div>
+                                            <div className="job-info">
+                                                <i className="fas fa-calendar-alt"></i>
+                                                <span className="job-date">Posted on {job?.job_posted}</span>
+                                            </div>
+                                        </div>
+                                        <button className="view-applicants-btn" data-jobid={job?.jobs_id}>
+                                            <i className="fas fa-users"></i>
+                                            View Applicants
+                                        </button>
+                                    </div>
+                                ))
+                            )}
                     </div>
                 </div>
             </div>

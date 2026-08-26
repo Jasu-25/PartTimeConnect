@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import './SeekerDashboard.css';
 import { useState, useEffect, useRef, useContext } from 'react';
 import { getInitials } from '../../Utils/seekerutils';
@@ -51,11 +51,11 @@ export function SeekerHeader() {
                         <i className="fas fa-chevron-down seekerdashboard-icon-xs"></i>
 
                         {dropdownstate ? <div className="seekerdashboard-dropdown seekerdashboard-active" id="userDropdown">
-                            <Link to="/seekerdashboard" className="seekerdashboard-dropdown-item"><i className="fas fa-home"></i> Home</Link>
-                            <Link to="/seekerappliedjob" className="seekerdashboard-dropdown-item"><i className="fas fa-briefcase"></i> My Applications</Link>
-                            <Link to="/seekersavedjob" className="seekerdashboard-dropdown-item"><i className="fas fa-heart"></i> Saved Jobs</Link>
-                            <Link to="/seekerprofile" className="seekerdashboard-dropdown-item"><i className="fas fa-user"></i> Profile</Link>
-                            <Link to="/seekersettings" className="seekerdashboard-dropdown-item"><i className="fas fa-cog"></i> Settings</Link>
+                            <NavLink to="/seekerdashboard" className={({ isActive }) => `seekerdashboard-dropdown-item ${isActive ? 'active' : ''}`}><i className="fas fa-home"></i> Home</NavLink>
+                            <NavLink to="/seekerappliedjob" className={({ isActive }) => `seekerdashboard-dropdown-item ${isActive ? 'active' : ''}`}><i className="fas fa-briefcase"></i> My Applications</NavLink>
+                            <NavLink to="/seekersavedjob" className={({ isActive }) => `seekerdashboard-dropdown-item ${isActive ? 'active' : ''}`}><i className="fas fa-heart"></i> Saved Jobs</NavLink>
+                            <NavLink to="/seekerprofile" className={({ isActive }) => `seekerdashboard-dropdown-item ${isActive ? 'active' : ''}`}><i className="fas fa-user"></i> Profile</NavLink>
+                            <NavLink to="/seekersettings" className={({ isActive }) => `seekerdashboard-dropdown-item ${isActive ? 'active' : ''}`}><i className="fas fa-cog"></i> Settings</NavLink>
                             <hr className="seekerdashboard-divider" />
                             <Link to="" className="seekerdashboard-dropdown-item seekerdashboard-logout" onClick={logoutseeker}><i
                                 className="fas fa-sign-out-alt"></i> Logout</Link>

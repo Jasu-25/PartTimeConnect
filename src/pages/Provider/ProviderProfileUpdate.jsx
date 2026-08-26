@@ -91,7 +91,6 @@ export function ProviderProfileUpdate() {
         let respose = await axios.get('/PartTimeConnect-Backend/get_provider.php', {
             withCredentials: true
         });
-        console.log(respose.data);
         setForm(() => ({
             companyName: respose?.data?.user?.company_name,
             contactEmail: respose?.data?.user?.email,
@@ -128,7 +127,6 @@ export function ProviderProfileUpdate() {
             console.error('Update failed', err);
         }
 
-        console.log(respose?.data);
 
         if (respose?.data?.status === 'success') {
             setTimeout(() => {

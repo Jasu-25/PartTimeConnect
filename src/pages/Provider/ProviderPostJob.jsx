@@ -181,7 +181,6 @@ export default function ProviderPostJob() {
                 },{
                     withCredentials:true
                 });
-                console.log(result.data);
             }catch(e){
                 console.log(e);
             }

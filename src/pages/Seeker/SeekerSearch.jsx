@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { SeekerHeader } from "./SeekerHeader"
 import './SeekerSearch.css'
 import './SeekerDashboard.css'
@@ -7,10 +7,12 @@ import { Requireddata } from "../../main";
 import LoadJobs from "./Components/LoadJobs";
 export const SeekerSearch = () => {
     const { seekerData: Seekerdata, refreshSeeker: setSeeker } = useContext(Requireddata);
+    const searchInputRef = useRef(null);
     let [Jobs, setJobs] = useState([]);
     let [SavedJobs, setSavedJobs] = useState([]);
     let [knownLocations, setKnownLocations] = useState([]);
     let [locationInput, setLocationInput] = useState('');
+    let [isSearchDisplayed, setIsSearchDisplayed] = useState(true);
     async function fetchData() {
         let jobsdata = await axios.get('PartTimeConnect-Backend/get-jobs.php');
         setJobs(jobsdata.data);
@@ -19,13 +21,6 @@ export const SeekerSearch = () => {
         });
         setSavedJobs(saveddata.data);
     }
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    useEffect(() => {
-        storeloactions();
-    }, [Jobs]);
 
     function issaved(id) {
         let savedjobids = false;
@@ -60,6 +55,43 @@ export const SeekerSearch = () => {
             return parts.includes(input);
         });
     }
+
+    function isSearchJobsAvaiable() {
+        let searchArray = [];
+        searchArray = Jobs.filter((job) => {
+            if (
+                Seekerdata?.location &&
+                job?.job_location &&
+                job?.job_status === 'open' &&
+                job.job_location.toLowerCase().includes((locationInput.toLowerCase() !== '' ? locationInput.toLowerCase() : Seekerdata.location.toLowerCase())) &&
+                isLocationAvailable(Seekerdata.location)
+            ) {
+                return job
+            }
+        })
+        if (searchArray.length !== 0) {
+            setIsSearchDisplayed(true)
+        }
+        else{
+            setIsSearchDisplayed(false)
+        }
+    }
+
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        storeloactions();
+        isSearchJobsAvaiable();
+    }, [Jobs]);
+
+    useEffect(() => {
+        isSearchJobsAvaiable();
+    }, [locationInput])
+
+
     if (!Seekerdata) {
         setSeeker();
     }
@@ -71,7 +103,7 @@ export const SeekerSearch = () => {
                 <main className="seekersearch-container">
                     <div className="seekersearch-sub-search-wrapper">
                         <div className="seekersearch-sub-search-box">
-                            <input type="text" className="seekersearch-sub-input" placeholder="Search for your saved jobs..." onChange={(e) => (setLocationInput(e.target.value))} />
+                            <input ref={searchInputRef} type="text" className="seekersearch-sub-input" placeholder="Search for Jobs in Your Location..." onChange={(e) => (setLocationInput(e.target.value))}/>
                             <button className="seekersearch-sub-btn"><i className="fas fa-search"></i> Search</button>
                         </div>
                     </div>
@@ -96,6 +128,22 @@ export const SeekerSearch = () => {
                                 )
                             }
                         })}
+
+                        {!isSearchDisplayed ?
+                            <div class="Nolocation-container">
+                                <div class="Nolocation-box">
+                                    <div class="Nolocation-icon-wrapper">
+                                        <i class="fas fa-map-marker-alt Nolocation-icon"></i>
+                                    </div>
+
+                                    <h3 class="Nolocation-title">no jobs found in your location</h3>
+
+                                    <button class="Nolocation-action-btn" id="Nolocation-action-button" onClick={() => searchInputRef.current?.focus()}>
+                                        <i class="fas fa-search-location Nolocation-btn-icon"></i>
+                                        <span>try another location</span>
+                                    </button>
+                                </div>
+                            </div> : ''}
 
                     </div>
                 </main>

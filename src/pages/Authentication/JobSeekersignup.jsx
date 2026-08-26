@@ -84,7 +84,6 @@ export function JobSeekersignup() {
                 location: formData.location
             });
             let data = result.data;
-            console.log(data);
             if(data.status === "error" || data.status === "duplicate"){
                 setErrors({result:data.message})
             }else{

@@ -11,7 +11,6 @@ export default function ProviderJobs({jobs}) {
             },{
                 withCredentials:true
             })
-            console.log(result.data?.count);
             setJobAplicantsNumber(result?.data?.count)
         }catch(e){
             console.log(e);

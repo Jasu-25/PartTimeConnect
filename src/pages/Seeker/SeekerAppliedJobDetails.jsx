@@ -74,7 +74,6 @@ export function SeekerAppliedJobDetails() {
                     withCredentials: true
                 });
 
-            console.log(result.data);
             setTimeout(async () => {
                 setIsLoading(false);
                 setIsApplied(true);
