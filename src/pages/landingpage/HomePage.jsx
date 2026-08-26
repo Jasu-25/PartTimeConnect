@@ -1,6 +1,10 @@
-import {Link} from 'react-router';
+import { useState } from 'react';
+import { Link } from 'react-router';
 import './HomePage.css';
 export function HomePage() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const closeMenu = () => setIsMenuOpen(false);
 
     return (
         <>    
@@ -11,18 +15,25 @@ export function HomePage() {
                     <div className="nav-logo">
                         <h1><Link to="/" className='company-name'>PartTimeConnect</Link></h1>
                     </div>
-                    <div className="nav-menu">
-                        <a href="#how-it-works" className="nav-link">How It Works</a>
-                        <a href="#features" className="nav-link">Features</a>
-                        <a href="#benefits" className="nav-link">Testimonials</a>
-                        <Link to="/login" className="nav-link login-link">Login</Link>
-                        <Link to="/signup" className="btn btn-primary nav-cta">Sign Up</Link>
+                    <div className={`nav-menu${isMenuOpen ? ' active' : ''}`}>
+                        <a href="#how-it-works" className="nav-link" onClick={closeMenu}>How It Works</a>
+                        <a href="#features" className="nav-link" onClick={closeMenu}>Features</a>
+                        <a href="#benefits" className="nav-link" onClick={closeMenu}>Testimonials</a>
+                        <Link to="/login" className="nav-link login-link" onClick={closeMenu}>Login</Link>
+                        <Link to="/signup" className="btn btn-primary nav-cta" onClick={closeMenu}>Sign Up</Link>
                     </div>
-                    <div className="hamburger">
+                    <button
+                        type="button"
+                        className={`hamburger${isMenuOpen ? ' active' : ''}`}
+                        onClick={() => setIsMenuOpen((menuOpen) => !menuOpen)}
+                        aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                        aria-expanded={isMenuOpen}
+                        aria-controls="main-navigation"
+                    >
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
+                    </button>
                 </div>
             </nav>
             <section className="hero">
